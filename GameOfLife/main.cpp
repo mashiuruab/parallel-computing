@@ -1,5 +1,12 @@
+/*
+Name: Md Mashiur Rahman Chowdhury
+BlazerId: mashiur
+Course Section: CS 432 or CS 632 or CS 732
+Homework #: 1 - Sequential Program
+*/
 #include <iostream>
 #include <chrono>
+#include <vector>
 
 using namespace std;
 
@@ -123,10 +130,32 @@ void updateBoard() {
     }
 }
 
+bool isUpdated() {
+    for(int x = 0; x <= rowNumber + 1; x++) {
+        for(int y = 0; y <= colNumber + 1; y++) {
+            if(board[x][y] != mirrorBoard[x][y]) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
 int main(int argc, char** argv)
 {
-    rowNumber = 5;
-    colNumber = 5;
+
+    if (argc != 4) {
+        cout<< "arg1 = rowNumber, arg2 = colNumber, arg3 = maxgeneration expected" << endl;
+        exit(EXIT_FAILURE);
+    }
+
+    rowNumber = atoi(argv[1]);
+    colNumber = atoi(argv[2]);
+    int maxGeneration = atoi(argv[3]);
+
+    cout<< "arg1 = " << rowNumber << " arg2 = " << colNumber
+        << " arg3 = " << maxGeneration << endl;
 
     board = new int*[rowNumber+2];
     mirrorBoard = new int*[rowNumber+2];
@@ -139,13 +168,29 @@ int main(int argc, char** argv)
     loadBoard();
     //printBoard();
 
-    auto start = chrono::system_clock::now();
-    doIteration();
-    auto end = chrono::system_clock::now();
+    double avgTime = 0;
+    int iteration = 3;
 
-    auto elapsed = chrono::duration_cast<chrono::seconds>(end - start);
+    for(int count = 0; count < iteration; count++) {
+        auto start = chrono::system_clock::now();
 
-    cout<< "Time Taken in microseconds " << elapsed.count() << endl;
+        for(int i = 0; i < maxGeneration;i++) {
+            doIteration();
+            if(!isUpdated()) {
+                cout<< "converged after generation " << i << endl;
+                break;
+            }
+        }
+
+        auto end = chrono::system_clock::now();
+        auto elapsed = chrono::duration_cast<chrono::milliseconds>(end - start);
+        avgTime += elapsed.count();
+    }
+
+    avgTime /= iteration;
+
+    cout<< "Avg Time Taken : " << avgTime << " milliseconds" << endl;
+
     updateBoard();
     //printBoard();
 
