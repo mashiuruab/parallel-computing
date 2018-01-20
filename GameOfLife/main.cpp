@@ -120,6 +120,35 @@ void doIteration(){
             }
         }
     }
+
+    /*top 1..colnum*/
+    for(int y = 1; y <= colNumber; y++) {
+        mirrorBoard[0][y] = mirrorBoard[rowNumber][y];
+    }
+
+    /*bottom 1..colnum*/
+    for(int y = 1; y <= colNumber; y++) {
+        mirrorBoard[rowNumber+1][y] = mirrorBoard[1][y];
+    }
+
+    /*left 1..rowNumber*/
+    for(int x = 1; x <= rowNumber; x++) {
+        mirrorBoard[x][0] = mirrorBoard[x][colNumber];
+    }
+
+    /*top left and bottom  left*/
+    mirrorBoard[0][0] = mirrorBoard[0][colNumber];
+    mirrorBoard[rowNumber+1][0] = mirrorBoard[1][0];
+
+    /*right 1..rowNumber*/
+    for(int x = 1; x <= rowNumber; x++) {
+        mirrorBoard[x][colNumber+1] = mirrorBoard[x][1];
+    }
+
+    /*top-right*/
+    mirrorBoard[0][colNumber+1] = mirrorBoard[rowNumber][colNumber+1];
+    /*bottom-right*/
+    mirrorBoard[rowNumber+1][colNumber+1] = mirrorBoard[1][colNumber+1];
 }
 
 void updateBoard() {
@@ -165,21 +194,24 @@ int main(int argc, char** argv)
         mirrorBoard[count] = new int[colNumber+2];
     }
 
-    loadBoard();
     //printBoard();
 
     double avgTime = 0;
     int iteration = 3;
 
     for(int count = 0; count < iteration; count++) {
+        loadBoard();
         auto start = chrono::system_clock::now();
 
         for(int i = 0; i < maxGeneration;i++) {
             doIteration();
+
             if(!isUpdated()) {
                 cout<< "converged after generation " << i << endl;
                 break;
             }
+
+            updateBoard();
         }
 
         auto end = chrono::system_clock::now();
@@ -191,7 +223,6 @@ int main(int argc, char** argv)
 
     cout<< "Avg Time Taken : " << avgTime << " milliseconds" << endl;
 
-    updateBoard();
     //printBoard();
 
     for(int count=0;count<rowNumber+2;count++){

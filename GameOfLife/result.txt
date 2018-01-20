@@ -1,0 +1,75 @@
+1. //mashiur@vulcan4:~/parallel-computing/GameOfLife
+
++++++++++++++++++: System Data :+++++++++++++++++++
++ Hostname   = vulcan4.CIS.UAB.EDU
++ Address    =
++ OS         = Centos 7 amd64
++ Kernel     = 3.10.0-693.11.6.el7.x86_64
++ Uptime     = 12 days
++ CPU        = 2 x Intel(R) Xeon(TM) CPU 3.20GHz
++ Memory     = 3.87 GB
+
+
+./a.out 1000 1000 1000
+arg1 = 1000 arg2 = 1000 arg3 = 1000
+Avg Time Taken : 34574 milliseconds
+
+2. // mashiur@vulcan4:~/parallel-computing/GameOfLife
+
++++++++++++++++++: System Data :+++++++++++++++++++
++ Hostname   = vulcan4.CIS.UAB.EDU
++ Address    =
++ OS         = Centos 7 amd64
++ Kernel     = 3.10.0-693.11.6.el7.x86_64
++ Uptime     = 12 days
++ CPU        = 2 x Intel(R) Xeon(TM) CPU 3.20GHz
++ Memory     = 3.87 GB
+
+
+./a.out 5000 5000 1000
+arg1 = 5000 arg2 = 5000 arg3 = 1000
+Avg Time Taken : 849129 millisecond
+
+3. // {mashiur@vulcan6:~/parallel-computing/GameOfLife}~
+
++++++++++++++++++: System Data :+++++++++++++++++++
++ Hostname   = vulcan6.cis.uab.edu
++ Address    =
++ OS         = Centos 7 amd64
++ Kernel     = 3.10.0-693.11.6.el7.x86_64
++ Uptime     = 11 days
++ CPU        = 2 x Intel(R) Xeon(TM) CPU 3.20GHz
++ Memory     = 3.87 GB
+
+./a.out 5000 5000 5000
+arg1 = 5000 arg2 = 5000 arg3 = 5000
+
+
+4. // ~{mashiur@vulcan14:~}
+
+Hostname   = vulcan14.cis.uab.edu
++ Address    =
++ OS         = Centos 7 amd64
++ Kernel     = 3.10.0-693.11.6.el7.x86_64
++ Uptime     = 11 days
++ CPU        = 2 x Intel(R) Xeon(TM) CPU 3.20GHz
++ Memory     = 3.87 GB
+
+./a.out 10000 10000 1000
+arg1 = 10000 arg2 = 10000 arg3 = 1000
+
+
+5. // {mashiur@vulcan4:~/parallel-computing/GameOfLife}~~
+
++++++++++++++++++: System Data :+++++++++++++++++++
++ Hostname   = vulcan4.CIS.UAB.EDU
++ Address    =
++ OS         = Centos 7 amd64
++ Kernel     = 3.10.0-693.11.6.el7.x86_64
++ Uptime     = 12 days
++ CPU        = 2 x Intel(R) Xeon(TM) CPU 3.20GHz
++ Memory     = 3.87 GB
+
+./a.out 10000 10000 10000
+arg1 = 10000 arg2 = 10000 arg3 = 10000
+
