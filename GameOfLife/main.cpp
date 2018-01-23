@@ -4,6 +4,12 @@ BlazerId: mashiur
 Course Section: CS 432 or CS 632 or CS 732
 Homework #: 1 - Sequential Program
 */
+/*
+ * How to run
+ * g++ --std=c++11 main.cpp
+ * ./a.out {rowNumber} {columnNumber} {Generation}
+ * for Example ./a.out 10 10 10
+ * */
 #include <iostream>
 #include <chrono>
 #include <vector>
@@ -208,6 +214,7 @@ int main(int argc, char** argv)
     cout<< "arg1 = " << rowNumber << " arg2 = " << colNumber
         << " arg3 = " << maxGeneration << endl;
 
+    /*allocating memory for board and mirror board*/
     board = new int*[rowNumber+2];
     mirrorBoard = new int*[rowNumber+2];
 
@@ -220,11 +227,13 @@ int main(int argc, char** argv)
     double avgTime = 0;
     int iteration = 3;
 
+    /* executing  3 times to calculate average time*/
     for(int count = 0; count < iteration; count++) {
         loadBoard();
         auto start = chrono::system_clock::now();
 
         for(int i = 0; i < maxGeneration;i++) {
+            /*updating the mirror board based on other cells condition or state*/
             doIteration();
 
             if(!isUpdated()) {
@@ -232,6 +241,7 @@ int main(int argc, char** argv)
                 break;
             }
 
+            /*Updating the main board from  mirror board*/
             updateBoard();
         }
 
@@ -248,11 +258,14 @@ int main(int argc, char** argv)
     printBoard();
 #endif
 
+    /*deleting the allocated memory for 1-D arrays representing
+     * the columns for each row in board and  mirrorBoard*/
     for(int count=0;count<rowNumber+2;count++){
         delete board[count];
         delete mirrorBoard[count];
     }
 
+    /*deleting the momory allocated for each row in board and mirrorBoard*/
     delete board;
     delete mirrorBoard;
 }
