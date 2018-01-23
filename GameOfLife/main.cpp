@@ -65,7 +65,7 @@ void loadBoard() {
 }
 
 void printBoard() {
-    cout<< "printing ..........." << endl;
+    cout<< "BOARD :: " << endl;
 
     for(int x = 0; x <= rowNumber + 1; x++) {
         for(int y = 0; y <= colNumber + 1; y++) {
@@ -194,7 +194,6 @@ int main(int argc, char** argv)
         mirrorBoard[count] = new int[colNumber+2];
     }
 
-    //printBoard();
 
     double avgTime = 0;
     int iteration = 3;
@@ -223,7 +222,9 @@ int main(int argc, char** argv)
 
     cout<< "Avg Time Taken : " << avgTime << " milliseconds" << endl;
 
-    //printBoard();
+#ifdef DEBUG_PRINT
+    printBoard();
+#endif
 
     for(int count=0;count<rowNumber+2;count++){
         delete board[count];

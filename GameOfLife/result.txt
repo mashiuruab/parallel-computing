@@ -36,12 +36,16 @@ Avg Time Taken : 849129 millisecond
 arg1 = 5000 arg2 = 5000 arg3 = 5000
 Avg Time Taken : 2.4755e+06 milliseconds
 
+41 minutes
+
 
 4. // my machine
 
 ./a.out 10000 10000 1000
 arg1 = 10000 arg2 = 10000 arg3 = 1000
 Avg Time Taken : 2.05505e+06 milliseconds
+
+34  minutes
 
 
 5. // my machine
@@ -50,4 +54,6 @@ Avg Time Taken : 2.05505e+06 milliseconds
 arg1 = 10000 arg2 = 10000 arg3 = 10000
 
 Avg Time Taken : 2.02442e+07 milliseconds
+
+5.62 Hours
 
