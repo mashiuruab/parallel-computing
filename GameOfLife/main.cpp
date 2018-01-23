@@ -10,16 +10,25 @@ Homework #: 1 - Sequential Program
 
 using namespace std;
 
+// board array pointer to pointer of type int
 int** board =  NULL;
+// mirror board array pointer to pointer of type int
 int** mirrorBoard = NULL;
+// row number without the ghost cells
 int rowNumber = 0;
+// column  number without the ghost cells
 int colNumber = 0;
 
+
+// initializing the board with random value (0 or 1)
 void loadBoard() {
+    // to ensure random board in each iteration
     srand(time(NULL));
 
+    // 1 or 0 representing live or dead
     int liveOrdead;
 
+    //  initializing the board  without the ghost cells
     for(int x = 1; x <= rowNumber; x++) {
         for(int y = 1; y <= colNumber; y++) {
             liveOrdead = rand() % 2;
@@ -27,35 +36,41 @@ void loadBoard() {
         }
     }
 
-    /*top 1..colnum*/
+    /*initializing ghost cell top row*/
+    /*top row, column = 1..column*/
     for(int y = 1; y <= colNumber; y++) {
         board[0][y] = board[rowNumber][y];
     }
 
-    /*bottom 1..colnum*/
+    /*initializing bottom ghost cell*/
+    /*row = rowNumber + 1,  column = 1..colnum*/
     for(int y = 1; y <= colNumber; y++) {
         board[rowNumber+1][y] = board[1][y];
     }
 
-    /*left 1..rowNumber*/
+    /*initializing left ghost cell*/
+    /*left row  = 1..rowNumber, column  = 0*/
     for(int x = 1; x <= rowNumber; x++) {
         board[x][0] = board[x][colNumber];
     }
 
-    /*top left and bottom  left*/
+    /*initializing top left and bottom  left ghost cell*/
+    /* row = 0, col = 0 and row = rowNumber + 1, column = 0*/
     board[0][0] = board[0][colNumber];
     board[rowNumber+1][0] = board[1][0];
 
+    /*initializing  right ghost cell, with out top and bottom one*/
     /*right 1..rowNumber*/
     for(int x = 1; x <= rowNumber; x++) {
         board[x][colNumber+1] = board[x][1];
     }
 
-    /*top-right*/
+    /*initializing top-right ghost cell*/
     board[0][colNumber+1] = board[rowNumber][colNumber+1];
-    /*bottom-right*/
+    /*initializing bottom-right ghost cell*/
     board[rowNumber+1][colNumber+1] = board[1][colNumber+1];
 
+    /*initializing the mirror board*/
     for(int x = 0; x <= rowNumber + 1; x++) {
         for(int y = 0; y <= colNumber + 1; y++) {
             mirrorBoard[x][y] = board[x][y];
@@ -64,6 +79,8 @@ void loadBoard() {
 
 }
 
+
+/*Printing the current state of the board*/
 void printBoard() {
     cout<< "BOARD :: " << endl;
 
@@ -74,6 +91,9 @@ void printBoard() {
         cout<<endl;
     }
 }
+
+/*Updating the MirrorBoard for each generation based on the GameOfLife Rule,
+ * ghost cells are also updated after the change of main board*/
 
 void doIteration(){
     int totalLive = 0;
@@ -151,6 +171,7 @@ void doIteration(){
     mirrorBoard[rowNumber+1][colNumber+1] = mirrorBoard[1][colNumber+1];
 }
 
+/*update the main board from mirror board after each generation*/
 void updateBoard() {
     for(int x = 0; x <= rowNumber + 1; x++) {
         for(int y = 0; y <= colNumber + 1; y++) {
@@ -159,6 +180,7 @@ void updateBoard() {
     }
 }
 
+/*Checking whether Any of the cell updated or not*/
 bool isUpdated() {
     for(int x = 0; x <= rowNumber + 1; x++) {
         for(int y = 0; y <= colNumber + 1; y++) {
