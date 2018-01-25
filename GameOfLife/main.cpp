@@ -101,7 +101,7 @@ void printBoard() {
 /*Updating the MirrorBoard for each generation based on the GameOfLife Rule,
  * ghost cells are also updated after the change of main board*/
 
-void doIteration(){
+void doIteration() {
     int totalLive = 0;
     for (int x = 1; x <= rowNumber; x++) {
         totalLive = 0;
