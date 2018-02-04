@@ -1,0 +1,21 @@
+1.
+
+Moore's law is the observation that the number of components (transistors, resistors and capacitors) in a an integrated circuit doubles approximately every two years.
+
+2. 
+
+Dennard Scaling is a method to scale down transistors but maintaining a constant power density. The power density means energy produces in a square unit of chip area. It is proportional to switching speed and the number of transistors in a unit area. From Denard scaling we know that the power density stays constant as transistors get smaller so the power used is proportional to area.
+
+3.
+
+The S-curve is a mathmatical model describes the growth of two variables in terms of one another over time. In business the S curve model is used to describe and predict the performance of a company or a product over a period of time.
+
+4.
+
+Yes Moore's law is dead now. It has sustained for five decades.
+
+5.
+
+The Exponential growth depends on three levels of adoption in the computing ecosystem. These are chip, system, and community. 
+
+Yes Exponential growth is likely to be sustained for many more years.
