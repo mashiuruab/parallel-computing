@@ -42,9 +42,20 @@ Avg Time Taken : 4.04052e+06 milliseconds
 arg1 = 10000 arg2 = 10000 arg3 = 1000
 Avg Time Taken : 3.4965e+06 milliseconds
 
-5.// did not success to run 10000 10000 5000
+5.
+
+arg1 = 10000 arg2 = 10000 arg3 = 5000
+Avg Time Taken : 1.14149e+07 milliseconds
+
+arg1 = 10000 arg2 = 10000 arg3 = 5000
+Avg Time Taken : 1.14338e+07 milliseconds
+
+arg1 = 10000 arg2 = 10000 arg3 = 5000
+Avg Time Taken : 1.1429e+07 milliseconds
 
 
+
+///////////////////////////////////////
 arg1 = 10000 arg2 = 10000 arg3 = 2000
 Avg Time Taken : 4.66085e+06 milliseconds
 
@@ -260,68 +271,6 @@ Submitted batch job 148187
 arg1 = 10000 arg2 = 10000 arg3 = 1000
 Avg Time Taken : 3.4965e+06 milliseconds
 
-5_1 :
-
-============================================================
-=====         Summary of your script job               =====
-============================================================
-  The script file is: 5_1.sh
-  The time limit is 2:00:00 HH:MM:SS.
-  The memory limit is: 8gb
-  The job will start running after: 2018-02-09T07:19:04
-  Job Name: mashiur_5_1
-  Virtual queue: class
-  QOS: --qos=class
-  Constraints: --constraint=dmc
-WARNING:  The first line of the script should set the shell.
-          such as #!/bin/sh or #!/bin/bash
-  Queue submit command:
-sbatch --qos=class -J mashiur_5_1 --begin=2018-02-09T07:19:04 --requeue --mail-user=mashiur@uab.edu -o mashiur_5_1.o%A -t 2:00:00 -N 1-1 -n 1 --mem-per-cpu=8000mb --constraint=dmc
-
-Submitted batch job 148188
-
-
-
-5_2 :
-
-============================================================
-=====         Summary of your script job               =====
-============================================================
-  The script file is: 5_2.sh
-  The time limit is 2:00:00 HH:MM:SS.
-  The memory limit is: 8gb
-  The job will start running after: 2018-02-09T07:19:44
-  Job Name: mashiur_5_2
-  Virtual queue: class
-  QOS: --qos=class
-  Constraints: --constraint=dmc
-WARNING:  The first line of the script should set the shell.
-          such as #!/bin/sh or #!/bin/bash
-  Queue submit command:
-sbatch --qos=class -J mashiur_5_2 --begin=2018-02-09T07:19:44 --requeue --mail-user=mashiur@uab.edu -o mashiur_5_2.o%A -t 2:00:00 -N 1-1 -n 1 --mem-per-cpu=8000mb --constraint=dmc
-
-Submitted batch job 148189
-
-5_3 :
-
-============================================================
-=====         Summary of your script job               =====
-============================================================
-  The script file is: 5_3.sh
-  The time limit is 2:00:00 HH:MM:SS.
-  The memory limit is: 8gb
-  The job will start running after: 2018-02-09T07:20:31
-  Job Name: mashiur_5_3
-  Virtual queue: class
-  QOS: --qos=class
-  Constraints: --constraint=dmc
-WARNING:  The first line of the script should set the shell.
-          such as #!/bin/sh or #!/bin/bash
-  Queue submit command:
-sbatch --qos=class -J mashiur_5_3 --begin=2018-02-09T07:20:31 --requeue --mail-user=mashiur@uab.edu -o mashiur_5_3.o%A -t 2:00:00 -N 1-1 -n 1 --mem-per-cpu=8000mb --constraint=dmc
-
-Submitted batch job 148190
-
 
 
 5_1_5000 :
@@ -344,6 +293,8 @@ sbatch --qos=small -J mashiur_uabcls05_515000 --begin=2018-02-10T10:01:06 --requ
 
 Submitted batch job 148402
 
+arg1 = 10000 arg2 = 10000 arg3 = 5000
+Avg Time Taken : 1.14149e+07 milliseconds
 
 5_2_5000 :
 
@@ -365,6 +316,11 @@ sbatch --qos=small -J 525000_uabcls05 --begin=2018-02-10T10:02:42 --requeue --ma
 
 Submitted batch job 148405
 
+arg1 = 10000 arg2 = 10000 arg3 = 5000
+Avg Time Taken : 1.14338e+07 milliseconds
 
 5_3_5000 :
 
+
+arg1 = 10000 arg2 = 10000 arg3 = 5000
+Avg Time Taken : 1.1429e+07 milliseconds
