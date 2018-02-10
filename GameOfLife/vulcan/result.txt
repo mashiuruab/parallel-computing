@@ -1,0 +1,161 @@
+1.
+
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                2
+On-line CPU(s) list:   0,1
+Thread(s) per core:    1
+Core(s) per socket:    1
+Socket(s):             2
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            15
+Model:                 4
+Model name:            Intel(R) Xeon(TM) CPU 3.20GHz
+Stepping:              3
+CPU MHz:               3200.191
+BogoMIPS:              6400.38
+L1d cache:             16K
+L2 cache:              2048K
+NUMA node0 CPU(s):     0,1
+Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx lm constant_tsc pebs bts nopl pni dtes64 monitor ds_cpl cid cx16 xtpr
+
+
+a)
+
+arg1 = 1000 arg2 = 1000 arg3 = 1000
+Avg Time Taken : 34550 milliseconds
+
+b)
+
+arg1 = 1000 arg2 = 1000 arg3 = 1000
+Avg Time Taken : 34576 milliseconds
+
+c)
+
+arg1 = 1000 arg2 = 1000 arg3 = 1000
+Avg Time Taken : 34530 milliseconds
+
+
+
+
+2.
+
++++++++++++++++++: System Data :+++++++++++++++++++
++ Hostname   = vulcan23.cis.uab.edu
++ Address    =
++ OS         = Centos 7 amd64
++ Kernel     = 3.10.0-693.11.6.el7.x86_64
++ Uptime     = 32 days
++ CPU        = 2 x Intel(R) Xeon(TM) CPU 3.20GHz
++ Memory     = 3.87 GB
++
++ # of Users = 2
++
+++++++++++++++++++: User Data :++++++++++++++++++++
++ Username   = mashiur
++ Sessions   = 1
++ Processes  = 4
++++++++++++: Maintenance Information :+++++++++++++
+Djkstra probably hates me
+(Linus Torvalds, in kernel/sched.c)
+Centos Vulcan Test Environment
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+a)
+
+b)
+
+c)
+
+
+3.
+
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                2
+On-line CPU(s) list:   0,1
+Thread(s) per core:    1
+Core(s) per socket:    1
+Socket(s):             2
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            15
+Model:                 4
+Model name:            Intel(R) Xeon(TM) CPU 3.20GHz
+Stepping:              3
+CPU MHz:               3200.191
+BogoMIPS:              6400.38
+L1d cache:             16K
+L2 cache:              2048K
+NUMA node0 CPU(s):     0,1
+Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx lm constant_tsc pebs bts nopl pni dtes64 monitor ds_cpl cid cx16 xtpr
+
+a)
+
+b)
+
+c)
+
+4.
+
++++++++++++++++++: System Data :+++++++++++++++++++
++ Hostname   = vulcan10.cis.uab.edu
++ Address    =
++ OS         = Centos 7 amd64
++ Kernel     = 3.10.0-693.11.6.el7.x86_64
++ Uptime     = 32 days
++ CPU        = 2 x Intel(R) Xeon(TM) CPU 3.20GHz
++ Memory     = 3.87 GB
++
++ # of Users = 1
++
+++++++++++++++++++: User Data :++++++++++++++++++++
++ Username   = mashiur
++ Sessions   = 1
++ Processes  = 4
++++++++++++: Maintenance Information :+++++++++++++
+Djkstra probably hates me
+(Linus Torvalds, in kernel/sched.c)
+Centos Vulcan Test Environment
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+a)
+
+b)
+
+c)
+
+
+5.
+
++++++++++++++++++: System Data :+++++++++++++++++++
++ Hostname   = vulcan5.cis.uab.edu
++ Address    =
++ OS         = Centos 7 amd64
++ Kernel     = 3.10.0-693.11.6.el7.x86_64
++ Uptime     = 32 days
++ CPU        = 2 x Intel(R) Xeon(TM) CPU 3.20GHz
++ Memory     = 3.87 GB
++
++ # of Users = 1
++
+++++++++++++++++++: User Data :++++++++++++++++++++
++ Username   = mashiur
++ Sessions   = 1
++ Processes  = 4
++++++++++++: Maintenance Information :+++++++++++++
+Djkstra probably hates me
+(Linus Torvalds, in kernel/sched.c)
+Centos Vulcan Test Environment
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+a)
+
+b)
+
+c)

@@ -1,0 +1,2 @@
+arg1 = 10000 arg2 = 10000 arg3 = 1000
+Avg Time Taken : 4.04052e+06 milliseconds

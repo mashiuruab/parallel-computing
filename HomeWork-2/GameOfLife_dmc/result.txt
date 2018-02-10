@@ -1,0 +1,109 @@
+1. //mashiur@vulcan4:~/parallel-computing/GameOfLife
+
++++++++++++++++++: System Data :+++++++++++++++++++
++ Hostname   = vulcan4.CIS.UAB.EDU
++ Address    =
++ OS         = Centos 7 amd64
++ Kernel     = 3.10.0-693.11.6.el7.x86_64
++ Uptime     = 12 days
++ CPU        = 2 x Intel(R) Xeon(TM) CPU 3.20GHz
++ Memory     = 3.87 GB
+
+
+./a.out 1000 1000 1000
+arg1 = 1000 arg2 = 1000 arg3 = 1000
+Avg Time Taken : 34574 milliseconds
+
+2. // mashiur@vulcan4:~/parallel-computing/GameOfLife
+
++++++++++++++++++: System Data :+++++++++++++++++++
++ Hostname   = vulcan4.CIS.UAB.EDU
++ Address    =
++ OS         = Centos 7 amd64
++ Kernel     = 3.10.0-693.11.6.el7.x86_64
++ Uptime     = 12 days
++ CPU        = 2 x Intel(R) Xeon(TM) CPU 3.20GHz
++ Memory     = 3.87 GB
+
+
+./a.out 5000 5000 1000
+arg1 = 5000 arg2 = 5000 arg3 = 1000
+Avg Time Taken : 849129 millisecond
+
+3. // my machine
+
+./a.out 5000 5000 5000
+arg1 = 5000 arg2 = 5000 arg3 = 5000
+Avg Time Taken : 2.4755e+06 milliseconds
+
+41 minutes
+
+
+4. // my machine
+
+./a.out 10000 10000 1000
+arg1 = 10000 arg2 = 10000 arg3 = 1000
+Avg Time Taken : 2.05505e+06 milliseconds
+
+34  minutes
+
+
+5. // my machine
+
+./a.out 10000 10000 10000
+arg1 = 10000 arg2 = 10000 arg3 = 10000
+
+Avg Time Taken : 2.02442e+07 milliseconds
+
+5.62 Hours
+
+
+
+
+
+--------------------------------------------------------------------
+
+
+
+3.
+
++++++++++++++++++: System Data :+++++++++++++++++++
++ Hostname   = vulcan8.cis.uab.edu
++ Address    =
++ OS         = Centos 7 amd64
++ Kernel     = 3.10.0-693.11.6.el7.x86_64
++ Uptime     = 14 days
++ CPU        = 2 x Intel(R) Xeon(TM) CPU 3.20GHz
++ Memory     = 3.87 GB
+
+./a.out 5000 5000 5000
+
+
+4.
+
++++++++++++++++++: System Data :+++++++++++++++++++
++ Hostname   = vulcan1.cis.uab.edu
++ Address    =
++ OS         = Centos 7 amd64
++ Kernel     = 3.10.0-693.11.6.el7.x86_64
++ Uptime     = 14 days
++ CPU        = 2 x Intel(R) Xeon(TM) CPU 3.20GHz
++ Memory     = 3.87 GB
+
+./a.out 10000 10000 1000
+arg1 = 10000 arg2 = 10000 arg3 = 1000
+
+
+5.
+
++++++++++++++++++: System Data :+++++++++++++++++++
++ Hostname   = vulcan22.cis.uab.edu
++ Address    =
++ OS         = Centos 7 amd64
++ Kernel     = 3.10.0-693.11.6.el7.x86_64
++ Uptime     = 14 days
++ CPU        = 2 x Intel(R) Xeon(TM) CPU 3.20GHz
++ Memory     = 3.87 GB
+
+
+./a.out 10000 10000 10000

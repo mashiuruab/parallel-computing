@@ -225,7 +225,7 @@ int main(int argc, char** argv)
 
 
     double avgTime = 0;
-    int iteration = 1;
+    int iteration = 3;
 
     /* executing  3 times to calculate average time*/
     for(int count = 0; count < iteration; count++) {
