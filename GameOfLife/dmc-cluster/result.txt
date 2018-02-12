@@ -9,6 +9,8 @@ Avg Time Taken : 23393 milliseconds
 arg1 = 1000 arg2 = 1000 arg3 = 1000
 Avg Time Taken : 23245 milliseconds
 
+time taken : 23258.56667 milliseconds or 23.2586 seconds or 0.39 min
+
 2.
 
 arg1 = 5000 arg2 = 5000 arg3 = 1000
@@ -19,6 +21,8 @@ Avg Time Taken : 580337 milliseconds
 
 arg1 = 5000 arg2 = 5000 arg3 = 1000
 Avg Time Taken : 857324 millisecond
+
+time : 672077 milliseconds or 672.077 seconds or 11.20 minutes
 
 3.
 
@@ -31,16 +35,20 @@ Avg Time Taken : 3.1879e+06 milliseconds
 arg1 = 5000 arg2 = 5000 arg3 = 5000
 Avg Time Taken : 4.54906e+06 milliseconds
 
+time : 3995980 milliseconds or 3995.98 seconds or 66.6 minutes
+
 4.
 
 arg1 = 10000 arg2 = 10000 arg3 = 1000
-Avg Time Taken : 3.70706e+06 milliseconds
+Avg Time Taken : 2.32212e+06 milliseconds
 
 arg1 = 10000 arg2 = 10000 arg3 = 1000
-Avg Time Taken : 4.04052e+06 milliseconds
+Avg Time Taken : 2.30887e+06 milliseconds
 
 arg1 = 10000 arg2 = 10000 arg3 = 1000
-Avg Time Taken : 3.4965e+06 milliseconds
+Avg Time Taken : 3.59104e+06 milliseconds
+
+time : 2740676.667 milliseconds or 2740.677 seconds or 45.678 minutes
 
 5.
 
@@ -53,6 +61,7 @@ Avg Time Taken : 1.14338e+07 milliseconds
 arg1 = 10000 arg2 = 10000 arg3 = 5000
 Avg Time Taken : 1.1429e+07 milliseconds
 
+time : 11425900 milliseconds  or 11425.9 seconds  or  190.43  minutes or 3.1738 hours
 
 
 ///////////////////////////////////////

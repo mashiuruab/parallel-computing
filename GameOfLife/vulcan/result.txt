@@ -1,5 +1,98 @@
 1.
 
+a)
+
+arg1 = 1000 arg2 = 1000 arg3 = 1000
+Avg Time Taken : 34550 milliseconds
+
+b)
+
+arg1 = 1000 arg2 = 1000 arg3 = 1000
+Avg Time Taken : 34576 milliseconds
+
+c)
+
+arg1 = 1000 arg2 = 1000 arg3 = 1000
+Avg Time Taken : 34530 milliseconds
+
+Avg time : 34552 milliseconds or 34.552 second or 0.58 min
+
+2.
+
+a)
+
+arg1 = 5000 arg2 = 5000 arg3 = 1000
+Avg Time Taken : 853320 milliseconds
+
+b)
+arg1 = 5000 arg2 = 5000 arg3 = 1000
+Avg Time Taken : 852220 milliseconds
+
+c)
+arg1 = 5000 arg2 = 5000 arg3 = 1000
+Avg Time Taken : 851575 milliseconds
+
+avg time  : 852371.6667 milliseconds or 852.371  second or 14.206 min
+
+3.
+
+a)
+
+arg1 = 5000 arg2 = 5000 arg3 = 5000
+Avg Time Taken : 4.24571e+06 milliseconds
+
+
+b)
+
+arg1 = 5000 arg2 = 5000 arg3 = 5000
+Avg Time Taken : 4.24939e+06 milliseconds
+
+c)
+
+arg1 = 5000 arg2 = 5000 arg3 = 5000
+Avg Time Taken : 4.24124e+06 milliseconds
+
+avg time : 4245446.667 milliseconds or 4245.447 second or 70.75 minute
+
+4.
+
+a)
+
+arg1 = 10000 arg2 = 10000 arg3 = 1000
+Avg Time Taken : 3.39828e+06 milliseconds
+
+b)
+arg1 = 10000 arg2 = 10000 arg3 = 1000
+Avg Time Taken : 3.39542e+06 milliseconds
+
+c)
+
+arg1 = 10000 arg2 = 10000 arg3 = 1000
+Avg Time Taken : 3.46365e+06 milliseconds
+
+avg time taken : 3419116.667 milliseconds or  3419.1167 seconds  or 56.985  minutes
+
+5.
+
+a)
+arg1 = 10000 arg2 = 10000 arg3 = 5000
+Avg Time Taken : 1.70106e+07 milliseconds
+
+b)
+
+arg1 = 10000 arg2 = 10000 arg3 = 5000
+Avg Time Taken : 1.69859e+07 milliseconds
+
+c)
+
+
+arg1 = 10000 arg2 = 10000 arg3 = 5000
+Avg Time Taken : 1.70253e+07 milliseconds
+
+avg  time : 17007266.67 milliseconds or 17007.267 seconds  or 283.454 mins  or 4.724 hours
+
+1.
+
 Architecture:          x86_64
 CPU op-mode(s):        32-bit, 64-bit
 Byte Order:            Little Endian
@@ -38,6 +131,7 @@ arg1 = 1000 arg2 = 1000 arg3 = 1000
 Avg Time Taken : 34530 milliseconds
 
 
+Avg time : 34552 milliseconds or 34.552 second
 
 
 2.
@@ -76,6 +170,8 @@ Avg Time Taken : 852220 milliseconds
 c)
 arg1 = 5000 arg2 = 5000 arg3 = 1000
 Avg Time Taken : 851575 milliseconds
+
+avg time  : 852371.6667 milliseconds or 852.371  second or 14.206 min
 
 3.
 
@@ -116,6 +212,9 @@ c)
 arg1 = 5000 arg2 = 5000 arg3 = 5000
 Avg Time Taken : 4.24124e+06 milliseconds
 
+
+avg time : 4245446.667 milliseconds or 4245.447 second or 70.75 minute
+
 4.
 
 +++++++++++++++++: System Data :+++++++++++++++++++
@@ -150,6 +249,32 @@ Avg Time Taken : 3.39542e+06 milliseconds
 
 c)
 
++++++++++++++++++: System Data :+++++++++++++++++++
++ Hostname   = vulcan10.CIS.UAB.EDU
++ Address    =
++ OS         = Centos 7 amd64
++ Kernel     = 3.10.0-693.11.6.el7.x86_64
++ Uptime     = 32 days
++ CPU        = 2 x Intel(R) Xeon(TM) CPU 3.20GHz
++ Memory     = 3.87 GB
++
++ # of Users = 1
++
+++++++++++++++++++: User Data :++++++++++++++++++++
++ Username   = mashiur
++ Sessions   = 1
++ Processes  = 4
++++++++++++: Maintenance Information :+++++++++++++
+Djkstra probably hates me
+(Linus Torvalds, in kernel/sched.c)
+Centos Vulcan Test Environment
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+arg1 = 10000 arg2 = 10000 arg3 = 1000
+Avg Time Taken : 3.46365e+06 milliseconds
+
+
+avg time taken : 3419116.667 milliseconds or  3419.1167 seconds  or 56.985  minutes
 
 5.
 
@@ -181,4 +306,30 @@ Avg Time Taken : 1.70106e+07 milliseconds
 
 b)
 
++++++++++++++++++: System Data :+++++++++++++++++++
++ Hostname   = vulcan10.CIS.UAB.EDU
++ Address    =
++ OS         = Centos 7 amd64
++ Kernel     = 3.10.0-693.11.6.el7.x86_64
++ Uptime     = 32 days
++ CPU        = 2 x Intel(R) Xeon(TM) CPU 3.20GHz
++ Memory     = 3.87 GB
++
++ # of Users = 1
++
+++++++++++++++++++: User Data :++++++++++++++++++++
++ Username   = mashiur
++ Sessions   = 1
++ Processes  = 4
++++++++++++: Maintenance Information :+++++++++++++
+Djkstra probably hates me
+(Linus Torvalds, in kernel/sched.c)
+Centos Vulcan Test Environment
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+arg1 = 10000 arg2 = 10000 arg3 = 5000
+Avg Time Taken : 1.69859e+07 milliseconds
+
 c)
+
