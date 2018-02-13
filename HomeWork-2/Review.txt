@@ -1,6 +1,6 @@
 1.
 
-Moore's law is the observation that the number of components (transistors, resistors and capacitors) in a an integrated circuit doubles approximately every two years.
+Moore's law is the observation that the number of components (transistors, resistors and capacitors) in an integrated circuit doubles approximately every two years.
 
 2. 
 
@@ -17,5 +17,4 @@ Yes Moore's law is dead now. It has sustained for five decades.
 5.
 
 The Exponential growth depends on three levels of adoption in the computing ecosystem. These are chip, system, and community. 
-
 Yes Exponential growth is likely to be sustained for many more years.
