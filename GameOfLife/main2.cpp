@@ -39,6 +39,7 @@ void loadBoard() {
         for(int y = 1; y <= colNumber; y++) {
             liveOrdead = rand() % 2;
             board[x][y] = liveOrdead;
+            mirrorBoard[x][y] = board[x][y];
         }
     }
 
@@ -46,18 +47,21 @@ void loadBoard() {
     /*top row, column = 1..column*/
     for(int y = 1; y <= colNumber; y++) {
         board[0][y] = board[rowNumber][y];
+        mirrorBoard[0][y] = board[0][y];
     }
 
     /*initializing bottom ghost cell*/
     /*row = rowNumber + 1,  column = 1..colnum*/
     for(int y = 1; y <= colNumber; y++) {
         board[rowNumber+1][y] = board[1][y];
+        mirrorBoard[rowNumber+1][y]  = board[rowNumber+1][y];
     }
 
     /*initializing left ghost cell*/
     /*left row  = 1..rowNumber, column  = 0*/
     for(int x = 1; x <= rowNumber; x++) {
         board[x][0] = board[x][colNumber];
+        mirrorBoard[x][0] = board[x][0];
     }
 
     /*initializing top left and bottom  left ghost cell*/
@@ -65,10 +69,14 @@ void loadBoard() {
     board[0][0] = board[0][colNumber];
     board[rowNumber+1][0] = board[1][0];
 
+    mirrorBoard[0][0] = board[0][0];
+    mirrorBoard[rowNumber+1][0] = board[rowNumber+1][0];
+
     /*initializing  right ghost cell, with out top and bottom one*/
     /*right 1..rowNumber*/
     for(int x = 1; x <= rowNumber; x++) {
         board[x][colNumber+1] = board[x][1];
+        mirrorBoard[x][colNumber+1] = board[x][colNumber+1];
     }
 
     /*initializing top-right ghost cell*/
@@ -76,12 +84,8 @@ void loadBoard() {
     /*initializing bottom-right ghost cell*/
     board[rowNumber+1][colNumber+1] = board[1][colNumber+1];
 
-    /*initializing the mirror board*/
-    for(int x = 0; x <= rowNumber + 1; x++) {
-        for(int y = 0; y <= colNumber + 1; y++) {
-            mirrorBoard[x][y] = board[x][y];
-        }
-    }
+    mirrorBoard[0][colNumber+1] = board[0][colNumber+1];
+    mirrorBoard[rowNumber+1][colNumber+1] = board[rowNumber+1][colNumber+1];
 
 }
 
@@ -105,7 +109,7 @@ int doIteration() {
     int update_count = 0;
     int totalLive = 0;
 
-    /*updating  the mirror  board for  swapping*/
+    /*updating  the mirror board from main board after  swapping*/
     for(int col = 0;  col <= colNumber + 1; col++) {
         mirrorBoard[0][col]  =  board[0][col];
         mirrorBoard[rowNumber+1][col]  =  board[rowNumber+1][col];
