@@ -3,5 +3,5 @@ project(GameOfLife)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp)
+set(SOURCE_FILES main2.cpp)
 add_executable(GameOfLife ${SOURCE_FILES})
