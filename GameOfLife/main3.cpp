@@ -14,6 +14,7 @@ Homework #: 1 - Sequential Program
 #include <chrono>
 #include <vector>
 #include <omp.h>
+#include <math.h>
 
 using namespace std;
 
@@ -115,12 +116,24 @@ void  doIteration() {
     double my_rank  = (double) omp_get_thread_num();
     double thread_count =  (double) omp_get_num_threads();
 
-    double row_chunk_with_ghost = (rowNumber + 2) / thread_count;
-    double col_chunk_with_ghost = (colNumber + 2) / thread_count;
+    double row_chunk_with_ghost = (double)(rowNumber + 2) / thread_count;
+    row_chunk_with_ghost =  floor(row_chunk_with_ghost);
 
-    double row_chunk = rowNumber / thread_count;
-    double col_chunk = colNumber / thread_count;
+    double col_chunk_with_ghost = (double)(colNumber + 2) / thread_count;
+    col_chunk_with_ghost  =  floor(col_chunk_with_ghost);
 
+    double row_chunk = (double)rowNumber / thread_count;
+    row_chunk = floor(row_chunk);
+
+    double col_chunk = (double)colNumber / thread_count;
+    col_chunk = floor(col_chunk);
+
+    int row_start_with_ghost = my_rank * row_chunk_with_ghost;
+    int col_start_with_ghost = my_rank * col_chunk_with_ghost;
+
+    int row_start = my_rank * row_chunk;
+    int col_start = my_rank * col_chunk;
+    
     if(my_rank == thread_count - 1) {
         row_chunk_with_ghost = (rowNumber + 2) - (row_chunk_with_ghost * (thread_count - 1));
         col_chunk_with_ghost = (colNumber + 2) - (col_chunk_with_ghost * (thread_count - 1));
@@ -129,17 +142,19 @@ void  doIteration() {
         col_chunk = colNumber - (col_chunk * (thread_count - 1));
     }
 
-    int row_start_with_ghost = (int) (my_rank * row_chunk_with_ghost);
-    int col_start_with_ghost = (int) (my_rank * col_chunk_with_ghost);
+    int row_end_with_ghost = row_start_with_ghost + row_chunk_with_ghost;
+    int col_end_with_ghost = col_start_with_ghost + col_chunk_with_ghost;
 
-    int row_end_with_ghost = (int) (row_start_with_ghost + row_chunk_with_ghost);
-    int col_end_with_ghost = (int) (col_start_with_ghost + col_chunk_with_ghost);
+    int row_end = row_start + row_chunk;
+    int col_end = col_start + col_chunk;
 
-    int row_start = (int) (my_rank * row_chunk);
-    int col_start = (int) (my_rank * col_chunk);
-
-    int row_end = (int) (row_start + row_chunk);
-    int col_end = (int) (col_start + col_chunk);
+#ifdef DEBUG_PRINT
+    cout<< "Number  of  threads  " << thread_count << endl;
+    cout<< "row with ghost start = " << row_start_with_ghost << " end = " << row_end_with_ghost <<endl;
+    cout<< "col with ghost start = " << col_start_with_ghost << " end = " << col_end_with_ghost <<endl;
+    cout<< "board row start = " << row_start << " end = " << row_end << endl;
+    cout<< "board col start = " << col_start << " end = " << col_end << endl;
+#endif
 
     int totalLive = 0;
 
