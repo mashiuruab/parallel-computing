@@ -133,7 +133,7 @@ void  doIteration() {
 
     int row_start = my_rank * row_chunk;
     int col_start = my_rank * col_chunk;
-    
+
     if(my_rank == thread_count - 1) {
         row_chunk_with_ghost = (rowNumber + 2) - (row_chunk_with_ghost * (thread_count - 1));
         col_chunk_with_ghost = (colNumber + 2) - (col_chunk_with_ghost * (thread_count - 1));
