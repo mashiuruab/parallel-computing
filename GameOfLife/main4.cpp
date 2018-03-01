@@ -302,7 +302,7 @@ int main(int argc, char** argv)
         for(int i = 0; i < maxGeneration;i++) {
             /*updating the mirror board based on other cells condition or state*/
             update_count = 0;
-            #pragma omp parallel num_threads(thread_count) reduction(+: update_count)
+#pragma omp parallel num_threads(thread_count) reduction(+: update_count)
             doIteration();
 
             if(update_count == 0) {
