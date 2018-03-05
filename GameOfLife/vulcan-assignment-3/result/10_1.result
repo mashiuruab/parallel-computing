@@ -1,0 +1,2 @@
+arg1 = 5000 arg2 = 5000 arg3 = 5000 thread_count = 10
+Avg Time Taken : 1.53916e+06 milliseconds

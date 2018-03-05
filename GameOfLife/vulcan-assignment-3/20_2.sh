@@ -1,1 +1,5 @@
-./run 5000 5000 5000 20 | tee /scratch/uabcls05/result-3/20_2.result
+#!/bin/bash
+
+module load intel
+
+./run 5000 5000 5000 20 | tee result/20_2.result
