@@ -40,8 +40,22 @@ void loadBoard() {
     // 1 or 0 representing live or dead
     int liveOrdead;
 
+    double my_rank  = (double) omp_get_thread_num();
+    double thread_count =  (double) omp_get_num_threads();
+
+    double row_chunk = (double)rowNumber / thread_count;
+    row_chunk = floor(row_chunk);
+
+    int row_start = my_rank * row_chunk;
+
+    if(my_rank == thread_count - 1) {
+        row_chunk = rowNumber - (row_chunk * (thread_count - 1));
+    }
+
+    int row_end = row_start + row_chunk;
+
     //  initializing the board  without the ghost cells
-    for(int x = 1; x <= rowNumber; x++) {
+    for(int x = row_start + 1; x < row_end + 1; x++) {
         for(int y = 1; y <= colNumber; y++) {
             liveOrdead = rand() % 2;
             board[x][y] = liveOrdead;
@@ -49,6 +63,9 @@ void loadBoard() {
         }
     }
 
+}
+
+void load_ghost_cells() {
     /*initializing ghost cell top row*/
     /*top row, column = 1..column*/
     for(int y = 1; y <= colNumber; y++) {
@@ -92,7 +109,6 @@ void loadBoard() {
 
     mirrorBoard[0][colNumber+1] = board[0][colNumber+1];
     mirrorBoard[rowNumber+1][colNumber+1] = board[rowNumber+1][colNumber+1];
-
 }
 
 
@@ -125,28 +141,22 @@ void  doIteration() {
     double row_chunk = (double)rowNumber / thread_count;
     row_chunk = floor(row_chunk);
 
-    double col_chunk = (double)colNumber / thread_count;
-    col_chunk = floor(col_chunk);
-
     int row_start_with_ghost = my_rank * row_chunk_with_ghost;
     int col_start_with_ghost = my_rank * col_chunk_with_ghost;
 
     int row_start = my_rank * row_chunk;
-    int col_start = my_rank * col_chunk;
 
     if(my_rank == thread_count - 1) {
         row_chunk_with_ghost = (rowNumber + 2) - (row_chunk_with_ghost * (thread_count - 1));
         col_chunk_with_ghost = (colNumber + 2) - (col_chunk_with_ghost * (thread_count - 1));
 
         row_chunk = rowNumber - (row_chunk * (thread_count - 1));
-        col_chunk = colNumber - (col_chunk * (thread_count - 1));
     }
 
     int row_end_with_ghost = row_start_with_ghost + row_chunk_with_ghost;
     int col_end_with_ghost = col_start_with_ghost + col_chunk_with_ghost;
 
     int row_end = row_start + row_chunk;
-    int col_end = col_start + col_chunk;
 
 #ifdef DEBUG_PRINT
     cout<< "Number  of  threads  " << thread_count << endl;
@@ -222,39 +232,37 @@ void  doIteration() {
             }
         }
     }
+}
 
-    if (my_rank == 0) { // just ensuring that only one thread executes this,
-        // other thread would just waste cpu computation cycle
-        /*top 1..colnum*/
-        for(int y = 1; y <= colNumber; y++) {
-            mirrorBoard[0][y] = mirrorBoard[rowNumber][y];
-        }
-
-        /*bottom 1..colnum*/
-        for(int y = 1; y <= colNumber; y++) {
-            mirrorBoard[rowNumber+1][y] = mirrorBoard[1][y];
-        }
-
-        /*left 1..rowNumber*/
-        for(int x = 1; x <= rowNumber; x++) {
-            mirrorBoard[x][0] = mirrorBoard[x][colNumber];
-        }
-
-        /*top left and bottom  left*/
-        mirrorBoard[0][0] = mirrorBoard[0][colNumber];
-        mirrorBoard[rowNumber+1][0] = mirrorBoard[1][0];
-
-        /*right 1..rowNumber*/
-        for(int x = 1; x <= rowNumber; x++) {
-            mirrorBoard[x][colNumber+1] = mirrorBoard[x][1];
-        }
-
-        /*top-right*/
-        mirrorBoard[0][colNumber+1] = mirrorBoard[rowNumber][colNumber+1];
-        /*bottom-right*/
-        mirrorBoard[rowNumber+1][colNumber+1] = mirrorBoard[1][colNumber+1];
+void ghost_cell_update_for_iteration() {
+    /*top 1..colnum*/
+    for(int y = 1; y <= colNumber; y++) {
+        mirrorBoard[0][y] = mirrorBoard[rowNumber][y];
     }
 
+    /*bottom 1..colnum*/
+    for(int y = 1; y <= colNumber; y++) {
+        mirrorBoard[rowNumber+1][y] = mirrorBoard[1][y];
+    }
+
+    /*left 1..rowNumber*/
+    for(int x = 1; x <= rowNumber; x++) {
+        mirrorBoard[x][0] = mirrorBoard[x][colNumber];
+    }
+
+    /*top left and bottom  left*/
+    mirrorBoard[0][0] = mirrorBoard[0][colNumber];
+    mirrorBoard[rowNumber+1][0] = mirrorBoard[1][0];
+
+    /*right 1..rowNumber*/
+    for(int x = 1; x <= rowNumber; x++) {
+        mirrorBoard[x][colNumber+1] = mirrorBoard[x][1];
+    }
+
+    /*top-right*/
+    mirrorBoard[0][colNumber+1] = mirrorBoard[rowNumber][colNumber+1];
+    /*bottom-right*/
+    mirrorBoard[rowNumber+1][colNumber+1] = mirrorBoard[1][colNumber+1];
 }
 
 /*update the main board from mirror board after each generation*/
@@ -296,7 +304,11 @@ int main(int argc, char** argv)
 
     /* executing  3 times to calculate average time*/
     for(int count = 0; count < iteration; count++) {
+        #pragma omp parallel num_threads(thread_count)
         loadBoard();
+
+        load_ghost_cells();
+
         auto start = chrono::system_clock::now();
 
         for(int i = 0; i < maxGeneration;i++) {
@@ -304,6 +316,8 @@ int main(int argc, char** argv)
             update_count = 0;
             #pragma omp parallel num_threads(thread_count) reduction(+: update_count)
             doIteration();
+
+            ghost_cell_update_for_iteration();
 
             if(update_count == 0) {
                 cout<< "converged after generation " << i << endl;

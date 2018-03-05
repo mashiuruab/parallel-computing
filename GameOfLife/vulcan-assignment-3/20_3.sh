@@ -1,1 +1,1 @@
-./run 5000 5000 5000 20 >> result/20_3.result
+./run 5000 5000 5000 20 | tee /scratch/uabcls05/result-3/20_3.result
