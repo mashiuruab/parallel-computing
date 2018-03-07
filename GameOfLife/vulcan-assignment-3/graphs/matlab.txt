@@ -1,0 +1,87 @@
+1.
+
+main_board = load('5000_5000_Speed_up.txt')
+plot(main_board(:,1), main_board(:,2))
+xlabel('Number of Threads')
+ylabel('Speed Up')
+
+
+main_board = load('5000_5000_Efficiency.txt')
+plot(main_board(:,1), main_board(:,2))
+xlabel('Number of Threads')
+ylabel('Efficiency')
+
+
+2. 1_16
+
+main_board = load('1_16_Speed_Up.txt')
+plot(main_board(:,1), main_board(:,2))
+xlabel('Number of Threads')
+ylabel('Speed Up')
+
+
+main_board = load('1_16_Efficiency.txt')
+plot(main_board(:,1), main_board(:,2))
+xlabel('Number of Threads')
+ylabel('Efficiency')
+
+3.
+
+2_8
+
+
+main_board = load('2_8_Speed_Up.txt')
+plot(main_board(:,1), main_board(:,2))
+xlabel('Number of Threads')
+ylabel('Speed Up')
+
+
+main_board = load('2_8_Efficiency.txt')
+plot(main_board(:,1), main_board(:,2))
+xlabel('Number of Threads')
+ylabel('Efficiency')
+
+4.
+
+4_4
+
+main_board = load('4_4_Speed_Up.txt')
+plot(main_board(:,1), main_board(:,2))
+xlabel('Number of Threads')
+ylabel('Speed Up')
+
+
+main_board = load('4_4_Efficiency.txt')
+plot(main_board(:,1), main_board(:,2))
+xlabel('Number of Threads')
+ylabel('Efficiency')
+
+5.
+
+8_2
+
+main_board = load('8_2_Speed_Up.txt')
+plot(main_board(:,1), main_board(:,2))
+xlabel('Number of Threads')
+ylabel('Speed Up')
+
+
+main_board = load('8_2_Efficiency.txt')
+plot(main_board(:,1), main_board(:,2))
+xlabel('Number of Threads')
+ylabel('Efficiency')
+
+6.
+
+16_1
+
+main_board = load('16_1_Speed_Up.txt')
+plot(main_board(:,1), main_board(:,2))
+xlabel('Number of Threads')
+ylabel('Speed Up')
+
+
+main_board = load('16_1_Efficiency.txt')
+plot(main_board(:,1), main_board(:,2))
+xlabel('Number of Threads')
+ylabel('Efficiency')
