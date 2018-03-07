@@ -1,0 +1,21 @@
+arg1 = 2 arg2 = 8 arg3 = 10 thread_count = 1
+converged after generation 1
+Time Taken : 32439 nanoseconds
+arg1 = 2 arg2 = 8 arg3 = 10 thread_count = 2
+converged after generation 1
+Time Taken : 33263 nanoseconds
+arg1 = 2 arg2 = 8 arg3 = 10 thread_count = 4
+converged after generation 1
+Time Taken : 33728 nanoseconds
+arg1 = 2 arg2 = 8 arg3 = 10 thread_count = 8
+converged after generation 1
+Time Taken : 820525 nanoseconds
+arg1 = 2 arg2 = 8 arg3 = 10 thread_count = 10
+converged after generation 1
+Time Taken : 64097 nanoseconds
+arg1 = 2 arg2 = 8 arg3 = 10 thread_count = 16
+converged after generation 1
+Time Taken : 101695 nanoseconds
+arg1 = 2 arg2 = 8 arg3 = 10 thread_count = 20
+converged after generation 1
+Time Taken : 147321 nanoseconds

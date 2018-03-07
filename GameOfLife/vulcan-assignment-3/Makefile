@@ -1,7 +1,7 @@
 all: run
 
-run: main3.cpp
-	icc -g -Wall -openmp -o run -std=c++11 main3.cpp
+run: main_omp.cpp
+	icc -g -Wall -openmp -o run -std=c++11 main_omp.cpp
 
 clean:
 	-rm run
