@@ -85,3 +85,57 @@ main_board = load('16_1_Efficiency.txt')
 plot(main_board(:,1), main_board(:,2))
 xlabel('Number of Threads')
 ylabel('Efficiency')
+
+
+
+Combined  Speed Up :
+
+
+as5000 = load('5000_5000_Speed_up.txt');
+as116 = load('1_16_Speed_Up.txt');
+as28 = load('2_8_Speed_Up.txt');
+as44 = load('4_4_Speed_Up.txt');
+as82 = load('8_2_Speed_Up.txt');
+as161 = load('16_1_Speed_Up.txt');
+
+plot(as5000(:,1), as5000(:,2),'DisplayName','5000*5000')
+hold on
+
+plot(as116(:,1), as116(:,2), 'DisplayName','1*16')
+plot(as28(:,1), as28(:,2), 'DisplayName','2*8')
+plot(as44(:,1), as44(:,2), 'DisplayName','4*4')
+plot(as82(:,1), as82(:,2), 'DisplayName','8*2')
+plot(as161(:,1), as161(:,2), 'DisplayName','16*1')
+
+xlabel('Number of Threads')
+ylabel('Speed Up')
+
+legend('show')
+
+hold off
+
+
+Combined Efficiency :
+
+ae5000 = load('5000_5000_Efficiency.txt');
+ae116 = load('1_16_Efficiency.txt');
+ae28 = load('2_8_Efficiency.txt');
+ae44 = load('4_4_Efficiency.txt');
+ae82 = load('8_2_Efficiency.txt');
+ae161 = load('16_1_Efficiency.txt');
+
+plot(ae5000(:,1), ae5000(:,2),'DisplayName','5000*5000')
+hold on
+
+plot(ae116(:,1), ae116(:,2), 'DisplayName','1*16')
+plot(ae28(:,1), ae28(:,2), 'DisplayName','2*8')
+plot(ae44(:,1), ae44(:,2), 'DisplayName','4*4')
+plot(ae82(:,1), ae82(:,2), 'DisplayName','8*2')
+plot(ae161(:,1), ae161(:,2), 'DisplayName','16*1')
+
+xlabel('Number of Threads')
+ylabel('Efficiency')
+
+legend('show')
+
+hold off
