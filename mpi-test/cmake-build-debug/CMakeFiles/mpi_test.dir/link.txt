@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/mpi_test.dir/main.cpp.o  -o mpi_test 

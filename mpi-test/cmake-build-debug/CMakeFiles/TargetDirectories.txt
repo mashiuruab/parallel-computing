@@ -1,0 +1,3 @@
+/home/mashiur/projects/parallel-computing/mpi-test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/mashiur/projects/parallel-computing/mpi-test/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/mashiur/projects/parallel-computing/mpi-test/cmake-build-debug/CMakeFiles/mpi_test.dir
