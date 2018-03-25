@@ -324,10 +324,16 @@ int main(int argc, char** argv) {
     int update_count;
     int i;
 
+    auto start = chrono::system_clock::now();;
+
+    if (my_rank ==  MASTER_RANK) {
+        start = chrono::system_clock::now();
+    }
+
     for(i = 0; i < maxGeneration;i++) {
         /*updating the mirror board based on other cells condition or state*/
         /*After this  phase updated  board state is in mirrorboard*/
-        update_count = doIteration();
+        doIteration();
 
         /*Sharing  update board result with other processes*/
 
@@ -335,18 +341,11 @@ int main(int argc, char** argv) {
 
         /*#############################################*/
 
-        if(update_count == 0) {
-            break;
-        }
-
         /*Updating the main board from  mirror board*/
         updateBoard();
     }
 
     if (my_rank == MASTER_RANK) {
-
-        auto start = chrono::system_clock::now();
-
         cout<< "process_rank = " << MASTER_RANK << ": converged after : " << i << " iteration " << endl;
 
         for(int count = 1; count < number_of_process; count++) {
@@ -363,7 +362,6 @@ int main(int argc, char** argv) {
         auto end = chrono::system_clock::now();
         auto elapsed = chrono::duration_cast<chrono::milliseconds>(end - start);
 
-        cout<< "now =  " << start.time_since_epoch().count() << " end = " << end.time_since_epoch().count()<< endl;
         cout<< "Time Taken : " << elapsed.count() << " milliseconds" << endl;
 
     } else {
