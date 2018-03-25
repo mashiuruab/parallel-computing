@@ -8,6 +8,9 @@ using namespace std;
 #define MASTER_RANK 0
 #define TAG_VERSION 0
 
+#define TOP_ROW_CHANNEL 1
+#define BOTTOM_ROW_CHANNEL 2
+
 
 // board array pointer to pointer of type int
 int** board =  NULL;
@@ -173,33 +176,33 @@ int doIteration() {
         }
     }
 
-    /*top 1..colnum*/
+    /*top ghost row*/
     for(int y = 1; y <= colNumber; y++) {
         mirrorBoard[0][y] = mirrorBoard[rowNumber][y];
     }
 
-    /*bottom 1..colnum*/
+    /*bottom ghost row*/
     for(int y = 1; y <= colNumber; y++) {
         mirrorBoard[rowNumber+1][y] = mirrorBoard[1][y];
     }
 
-    /*left 1..rowNumber*/
+    /*left ghost column*/
     for(int x = 1; x <= rowNumber; x++) {
         mirrorBoard[x][0] = mirrorBoard[x][colNumber];
     }
 
-    /*top left and bottom  left*/
+    /*top left and bottom  left  ghost cell*/
     mirrorBoard[0][0] = mirrorBoard[0][colNumber];
     mirrorBoard[rowNumber+1][0] = mirrorBoard[1][0];
 
-    /*right 1..rowNumber*/
+    /*right ghost column */
     for(int x = 1; x <= rowNumber; x++) {
         mirrorBoard[x][colNumber+1] = mirrorBoard[x][1];
     }
 
-    /*top-right*/
+    /*top-right  ghost column */
     mirrorBoard[0][colNumber+1] = mirrorBoard[rowNumber][colNumber+1];
-    /*bottom-right*/
+    /*bottom-right ghost column*/
     mirrorBoard[rowNumber+1][colNumber+1] = mirrorBoard[1][colNumber+1];
 
     return update_count;
@@ -248,6 +251,46 @@ void set_row_number() {
     cout<< "row assigned : " << rowNumber << endl;
 }
 
+
+void update_with_sibling_process() {
+    int top_row_send[colNumber];
+    int bottom_row_send[colNumber];
+    int top_ghost_row_recv[colNumber];
+    int bottom_ghost_row_recv[colNumber];
+
+    for(int count = 1; count <=colNumber;count++) {
+        top_row_send[count-1] =  mirrorBoard[1][count];
+        bottom_row_send[count-1] = mirrorBoard[rowNumber][count];
+    }
+
+    int prev_process = my_rank - 1 < 0 ? number_of_process -1 : my_rank -1;
+    int next_process = (my_rank + 1) % number_of_process;
+
+    if((my_rank % 2) ==  0) { // even
+        MPI_Send(top_row_send, colNumber, MPI_INT, prev_process, TAG_VERSION, MPI_COMM_WORLD);
+        MPI_Send(bottom_row_send, colNumber, MPI_INT, next_process, TAG_VERSION, MPI_COMM_WORLD);
+
+
+        MPI_Status status;
+        MPI_Recv(top_ghost_row_recv, colNumber, MPI_INT, prev_process, TAG_VERSION, MPI_COMM_WORLD, &status);
+        MPI_Recv(bottom_ghost_row_recv, colNumber, MPI_INT, next_process, TAG_VERSION, MPI_COMM_WORLD, &status);
+
+    } else {
+        MPI_Status status;
+        MPI_Recv(top_ghost_row_recv, colNumber, MPI_INT, prev_process, TAG_VERSION, MPI_COMM_WORLD, &status);
+        MPI_Recv(bottom_ghost_row_recv, colNumber, MPI_INT, next_process, TAG_VERSION, MPI_COMM_WORLD, &status);
+
+        MPI_Send(top_row_send, colNumber, MPI_INT, prev_process, TAG_VERSION, MPI_COMM_WORLD);
+        MPI_Send(bottom_row_send, colNumber, MPI_INT, next_process, TAG_VERSION, MPI_COMM_WORLD);
+    }
+
+    /*updating the mirrorboard top and  bottom ghost row with values sibling process*/
+    for(int count=1;count<=colNumber;count++) {
+        mirrorBoard[0][count] = top_ghost_row_recv[count-1];
+        mirrorBoard[rowNumber+1][count] =  bottom_ghost_row_recv[count-1];
+    }
+}
+
 int main(int argc, char** argv) {
 
     if (argc != 4) {
@@ -259,11 +302,6 @@ int main(int argc, char** argv) {
     colNumber = atoi(argv[2]);
     maxGeneration = atoi(argv[3]);
 
-    if (my_rank == MASTER_RANK) {
-        cout<< "arg1 = " << rowNumber << " arg2 = " << colNumber
-            << " arg3 = " << maxGeneration << endl;
-    }
-
 
     MPI_Init(NULL, NULL);
 
@@ -273,6 +311,12 @@ int main(int argc, char** argv) {
 
 
     set_row_number();
+
+    if (my_rank == MASTER_RANK) {
+        cout<< "arg1 = " << rowNumber << " arg2 = " << colNumber
+            << " arg3 = " << maxGeneration << endl;
+    }
+
     init_memory();
 
     loadBoard();
@@ -282,7 +326,14 @@ int main(int argc, char** argv) {
 
     for(i = 0; i < maxGeneration;i++) {
         /*updating the mirror board based on other cells condition or state*/
+        /*After this  phase updated  board state is in mirrorboard*/
         update_count = doIteration();
+
+        /*Sharing  update board result with other processes*/
+
+        update_with_sibling_process();
+
+        /*#############################################*/
 
         if(update_count == 0) {
             break;
@@ -294,11 +345,9 @@ int main(int argc, char** argv) {
 
     if (my_rank == MASTER_RANK) {
 
-
-        double execution_time = 0;
         auto start = chrono::system_clock::now();
 
-        cout<< "src = " << MASTER_RANK << ": converged after : " << i << " iteration " << endl;
+        cout<< "process_rank = " << MASTER_RANK << ": converged after : " << i << " iteration " << endl;
 
         for(int count = 1; count < number_of_process; count++) {
             int recv;
@@ -308,14 +357,14 @@ int main(int argc, char** argv) {
 
             MPI_Recv(&recv, 1, MPI_INT, status.MPI_SOURCE, TAG_VERSION, MPI_COMM_WORLD, &status);
 
-            cout<< "src = " << status.MPI_SOURCE << ": converged after : " << recv << " iteration " << endl;
+            cout<< "process_rank = " << status.MPI_SOURCE << ": converged after : " << recv << " iteration " << endl;
         }
 
         auto end = chrono::system_clock::now();
         auto elapsed = chrono::duration_cast<chrono::milliseconds>(end - start);
-        execution_time += elapsed.count();
 
-        cout<< "Time Taken : " << execution_time << " milliseconds" << endl;
+        cout<< "now =  " << start.time_since_epoch().count() << " end = " << end.time_since_epoch().count()<< endl;
+        cout<< "Time Taken : " << elapsed.count() << " milliseconds" << endl;
 
     } else {
         MPI_Send(&i, 1, MPI_INT, MASTER_RANK, TAG_VERSION, MPI_COMM_WORLD);

@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/MPI_HomeWork.dir/main.cpp.o"
+  "CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.o"
   "MPI_HomeWork.pdb"
   "MPI_HomeWork"
 )

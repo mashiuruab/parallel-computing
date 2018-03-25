@@ -123,32 +123,32 @@ MPI_HomeWork/fast:
 	$(MAKE) -f CMakeFiles/MPI_HomeWork.dir/build.make CMakeFiles/MPI_HomeWork.dir/build
 .PHONY : MPI_HomeWork/fast
 
-main.o: main.cpp.o
+main_mpi.o: main_mpi.cpp.o
 
-.PHONY : main.o
+.PHONY : main_mpi.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/MPI_HomeWork.dir/build.make CMakeFiles/MPI_HomeWork.dir/main.cpp.o
-.PHONY : main.cpp.o
+main_mpi.cpp.o:
+	$(MAKE) -f CMakeFiles/MPI_HomeWork.dir/build.make CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.o
+.PHONY : main_mpi.cpp.o
 
-main.i: main.cpp.i
+main_mpi.i: main_mpi.cpp.i
 
-.PHONY : main.i
+.PHONY : main_mpi.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/MPI_HomeWork.dir/build.make CMakeFiles/MPI_HomeWork.dir/main.cpp.i
-.PHONY : main.cpp.i
+main_mpi.cpp.i:
+	$(MAKE) -f CMakeFiles/MPI_HomeWork.dir/build.make CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.i
+.PHONY : main_mpi.cpp.i
 
-main.s: main.cpp.s
+main_mpi.s: main_mpi.cpp.s
 
-.PHONY : main.s
+.PHONY : main_mpi.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/MPI_HomeWork.dir/build.make CMakeFiles/MPI_HomeWork.dir/main.cpp.s
-.PHONY : main.cpp.s
+main_mpi.cpp.s:
+	$(MAKE) -f CMakeFiles/MPI_HomeWork.dir/build.make CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.s
+.PHONY : main_mpi.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... MPI_HomeWork"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... main_mpi.o"
+	@echo "... main_mpi.i"
+	@echo "... main_mpi.s"
 .PHONY : help
 
 

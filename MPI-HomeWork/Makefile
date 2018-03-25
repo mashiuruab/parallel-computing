@@ -1,7 +1,7 @@
 all: run
 
-run: main.cpp
-	mpic++ -std=c++11 -o run main.cpp
+run: main_mpi.cpp
+	mpic++ -std=c++11 -o run main_mpi.cpp
 
 clean:
 	-rm run
