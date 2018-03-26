@@ -35,8 +35,18 @@
       <file leaf-file-name="main2.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main2.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
+            <state relative-caret-position="432">
               <caret line="260" column="41" lean-forward="false" selection-start-line="260" selection-start-column="29" selection-end-line="260" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_mpi.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_mpi.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -45,8 +55,8 @@
       <file leaf-file-name="main_mpi.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main_mpi.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="364" column="0" lean-forward="false" selection-start-line="364" selection-start-column="0" selection-end-line="364" selection-end-column="0" />
+            <state relative-caret-position="216">
+              <caret line="318" column="83" lean-forward="false" selection-start-line="318" selection-start-column="83" selection-end-line="318" selection-end-column="83" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -181,12 +191,12 @@
       <workItem from="1521082941153" duration="6385000" />
       <workItem from="1521821522283" duration="80000" />
       <workItem from="1521995755687" duration="8296000" />
-      <workItem from="1522015660976" duration="562000" />
+      <workItem from="1522015660976" duration="2755000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15323000" />
+    <option name="totallyTimeSpent" value="17516000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1303" height="780" extended-state="6" />
@@ -285,6 +295,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1206">
           <caret line="67" column="19" lean-forward="false" selection-start-line="66" selection-start-column="4" selection-end-line="67" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -326,6 +337,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1206">
           <caret line="67" column="19" lean-forward="true" selection-start-line="66" selection-start-column="4" selection-end-line="67" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -363,13 +375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_mpi.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/mpich/include/mpi.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10404">
@@ -380,16 +385,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main2.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
+        <state relative-caret-position="432">
           <caret line="260" column="41" lean-forward="false" selection-start-line="260" selection-start-column="29" selection-end-line="260" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_mpi.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main_mpi.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="364" column="0" lean-forward="false" selection-start-line="364" selection-start-column="0" selection-end-line="364" selection-end-column="0" />
+        <state relative-caret-position="216">
+          <caret line="318" column="83" lean-forward="false" selection-start-line="318" selection-start-column="83" selection-end-line="318" selection-end-column="83" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

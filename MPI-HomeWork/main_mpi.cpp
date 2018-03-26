@@ -8,8 +8,7 @@ using namespace std;
 #define MASTER_RANK 0
 #define TAG_VERSION 0
 
-#define TOP_ROW_CHANNEL 1
-#define BOTTOM_ROW_CHANNEL 2
+#define SIBLING_CHANNEL 1
 
 
 // board array pointer to pointer of type int
@@ -251,6 +250,9 @@ void set_row_number() {
     cout<< "row assigned : " << rowNumber << endl;
 }
 
+void array_copy(int *src, int *dest) {
+    src = dest;
+}
 
 void update_with_sibling_process() {
     int top_row_send[colNumber];
@@ -267,21 +269,54 @@ void update_with_sibling_process() {
     int next_process = (my_rank + 1) % number_of_process;
 
     if((my_rank % 2) ==  0) { // even
-        MPI_Send(top_row_send, colNumber, MPI_INT, prev_process, TAG_VERSION, MPI_COMM_WORLD);
-        MPI_Send(bottom_row_send, colNumber, MPI_INT, next_process, TAG_VERSION, MPI_COMM_WORLD);
+        MPI_Send(top_row_send, colNumber, MPI_INT, prev_process, SIBLING_CHANNEL, MPI_COMM_WORLD);
+        MPI_Send(bottom_row_send, colNumber, MPI_INT, next_process, SIBLING_CHANNEL, MPI_COMM_WORLD);
 
 
         MPI_Status status;
-        MPI_Recv(top_ghost_row_recv, colNumber, MPI_INT, prev_process, TAG_VERSION, MPI_COMM_WORLD, &status);
-        MPI_Recv(bottom_ghost_row_recv, colNumber, MPI_INT, next_process, TAG_VERSION, MPI_COMM_WORLD, &status);
+        int temp_array1[colNumber];
+        int temp_array2[colNumber];
+
+        MPI_Recv(temp_array1, colNumber, MPI_INT, MPI_ANY_SOURCE, SIBLING_CHANNEL, MPI_COMM_WORLD, &status);
+
+        if(status.MPI_SOURCE == prev_process) {
+            array_copy(top_ghost_row_recv, temp_array1);
+        } else {
+            array_copy(bottom_ghost_row_recv, temp_array1);
+        }
+
+        MPI_Recv(temp_array2, colNumber, MPI_INT, MPI_ANY_SOURCE, SIBLING_CHANNEL, MPI_COMM_WORLD, &status);
+
+        if(status.MPI_SOURCE == next_process) {
+            array_copy(bottom_ghost_row_recv, temp_array2);
+        } else {
+            array_copy(top_ghost_row_recv, temp_array2);
+        }
 
     } else {
         MPI_Status status;
-        MPI_Recv(top_ghost_row_recv, colNumber, MPI_INT, prev_process, TAG_VERSION, MPI_COMM_WORLD, &status);
-        MPI_Recv(bottom_ghost_row_recv, colNumber, MPI_INT, next_process, TAG_VERSION, MPI_COMM_WORLD, &status);
 
-        MPI_Send(top_row_send, colNumber, MPI_INT, prev_process, TAG_VERSION, MPI_COMM_WORLD);
-        MPI_Send(bottom_row_send, colNumber, MPI_INT, next_process, TAG_VERSION, MPI_COMM_WORLD);
+        int temp_array1[colNumber];
+        int temp_array2[colNumber];
+
+        MPI_Recv(temp_array1, colNumber, MPI_INT, MPI_ANY_SOURCE, SIBLING_CHANNEL, MPI_COMM_WORLD, &status);
+
+        if(status.MPI_SOURCE == prev_process) {
+            array_copy(top_ghost_row_recv, temp_array1);
+        } else {
+            array_copy(bottom_ghost_row_recv, temp_array1);
+        }
+
+        MPI_Recv(temp_array2, colNumber, MPI_INT, MPI_ANY_SOURCE, SIBLING_CHANNEL, MPI_COMM_WORLD, &status);
+
+        if(status.MPI_SOURCE == next_process) {
+            array_copy(bottom_ghost_row_recv, temp_array2);
+        } else {
+            array_copy(top_ghost_row_recv, temp_array2);
+        }
+
+        MPI_Send(top_row_send, colNumber, MPI_INT, prev_process, SIBLING_CHANNEL, MPI_COMM_WORLD);
+        MPI_Send(bottom_row_send, colNumber, MPI_INT, next_process, SIBLING_CHANNEL, MPI_COMM_WORLD);
     }
 
     /*updating the mirrorboard top and  bottom ghost row with values sibling process*/
