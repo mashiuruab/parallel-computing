@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 #include <mpi.h>
 
 using namespace std;
@@ -37,7 +37,7 @@ int main(int argc, char** argv) {
 
             MPI_Probe(count, TAG_VERSION, MPI_COMM_WORLD, &status);
 
-            cout<< "DEBUG:: src = " << status.MPI_SOURCE << endl;
+            printf("DEBUG:: src = %d ",  status.MPI_SOURCE);
 
             MPI_Recv(result[status.MPI_SOURCE], 10, MPI_INT, status.MPI_SOURCE, TAG_VERSION, MPI_COMM_WORLD, &status);
 
@@ -45,13 +45,13 @@ int main(int argc, char** argv) {
 
 
         for(int count = 1; count < world_size;count++) {
-            cout<< count << " -> ";
+            printf("%d  -> ", count);
 
             for(int count2 = 0; count2 < 10; count2++) {
-                cout<< result[count][count2] << " ";
+                printf("%d  ", result[count][count2]);
             }
 
-            cout<< endl;
+            printf("");
         }
     } else {
         int tempArray[10];

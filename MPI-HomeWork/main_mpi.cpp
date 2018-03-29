@@ -395,9 +395,9 @@ int main(int argc, char** argv) {
         }
 
         auto end = chrono::system_clock::now();
-        auto elapsed = chrono::duration_cast<chrono::milliseconds>(end - start);
+        auto elapsed = chrono::duration_cast<chrono::minutes>(end - start);
 
-        cout<< "Time Taken : " << elapsed.count() << " milliseconds" << endl;
+        cout<< "Time Taken : " << elapsed.count() << " minutes" << endl;
 
     } else {
         MPI_Send(&i, 1, MPI_INT, MASTER_RANK, TAG_VERSION, MPI_COMM_WORLD);
