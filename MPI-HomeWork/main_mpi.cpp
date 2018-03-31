@@ -247,7 +247,7 @@ void set_row_number() {
         rowNumber = totalRow - (rowNumber * (number_of_process - 1));
     }
 
-    cout<< "row assigned : " << rowNumber << endl;
+    /*cout<< "row assigned : " << rowNumber << endl;*/
 }
 
 void array_copy(int *src, int *dest) {
@@ -381,7 +381,7 @@ int main(int argc, char** argv) {
     }
 
     if (my_rank == MASTER_RANK) {
-        cout<< "process_rank = " << MASTER_RANK << ": converged after : " << i << " iteration " << endl;
+        /*cout<< "process_rank = " << MASTER_RANK << ": converged after : " << i << " iteration " << endl;*/
 
         for(int count = 1; count < number_of_process; count++) {
             int recv;
@@ -391,13 +391,13 @@ int main(int argc, char** argv) {
 
             MPI_Recv(&recv, 1, MPI_INT, status.MPI_SOURCE, TAG_VERSION, MPI_COMM_WORLD, &status);
 
-            cout<< "process_rank = " << status.MPI_SOURCE << ": converged after : " << recv << " iteration " << endl;
+            /*cout<< "process_rank = " << status.MPI_SOURCE << ": converged after : " << recv << " iteration " << endl;*/
         }
 
         auto end = chrono::system_clock::now();
-        auto elapsed = chrono::duration_cast<chrono::minutes>(end - start);
+        auto elapsed = chrono::duration_cast<chrono::milliseconds>(end - start);
 
-        cout<< "Time Taken : " << elapsed.count() << " minutes" << endl;
+        cout<< "Time Taken : " << elapsed.count() << " milliseconds" << endl;
 
     } else {
         MPI_Send(&i, 1, MPI_INT, MASTER_RANK, TAG_VERSION, MPI_COMM_WORLD);
