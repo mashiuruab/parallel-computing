@@ -57,38 +57,38 @@ include CMakeFiles/MPI_HomeWork.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/MPI_HomeWork.dir/flags.make
 
-CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.o: CMakeFiles/MPI_HomeWork.dir/flags.make
-CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.o: ../main_mpi.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashiur/projects/parallel-computing/MPI-HomeWork/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.o -c /home/mashiur/projects/parallel-computing/MPI-HomeWork/main_mpi.cpp
+CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.o: CMakeFiles/MPI_HomeWork.dir/flags.make
+CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.o: ../non-blocking/main_mpi.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashiur/projects/parallel-computing/MPI-HomeWork/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.o -c /home/mashiur/projects/parallel-computing/MPI-HomeWork/non-blocking/main_mpi.cpp
 
-CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashiur/projects/parallel-computing/MPI-HomeWork/main_mpi.cpp > CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.i
+CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashiur/projects/parallel-computing/MPI-HomeWork/non-blocking/main_mpi.cpp > CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.i
 
-CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashiur/projects/parallel-computing/MPI-HomeWork/main_mpi.cpp -o CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.s
+CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashiur/projects/parallel-computing/MPI-HomeWork/non-blocking/main_mpi.cpp -o CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.s
 
-CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.o.requires:
+CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.o.requires:
 
-.PHONY : CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.o.requires
+.PHONY : CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.o.requires
 
-CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.o.provides: CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.o.requires
-	$(MAKE) -f CMakeFiles/MPI_HomeWork.dir/build.make CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.o.provides.build
-.PHONY : CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.o.provides
+CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.o.provides: CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.o.requires
+	$(MAKE) -f CMakeFiles/MPI_HomeWork.dir/build.make CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.o.provides.build
+.PHONY : CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.o.provides
 
-CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.o.provides.build: CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.o
+CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.o.provides.build: CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.o
 
 
 # Object files for target MPI_HomeWork
 MPI_HomeWork_OBJECTS = \
-"CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.o"
+"CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.o"
 
 # External object files for target MPI_HomeWork
 MPI_HomeWork_EXTERNAL_OBJECTS =
 
-MPI_HomeWork: CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.o
+MPI_HomeWork: CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.o
 MPI_HomeWork: CMakeFiles/MPI_HomeWork.dir/build.make
 MPI_HomeWork: CMakeFiles/MPI_HomeWork.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mashiur/projects/parallel-computing/MPI-HomeWork/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable MPI_HomeWork"
@@ -99,7 +99,7 @@ CMakeFiles/MPI_HomeWork.dir/build: MPI_HomeWork
 
 .PHONY : CMakeFiles/MPI_HomeWork.dir/build
 
-CMakeFiles/MPI_HomeWork.dir/requires: CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.o.requires
+CMakeFiles/MPI_HomeWork.dir/requires: CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.o.requires
 
 .PHONY : CMakeFiles/MPI_HomeWork.dir/requires
 

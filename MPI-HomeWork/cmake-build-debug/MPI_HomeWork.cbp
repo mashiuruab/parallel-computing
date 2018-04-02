@@ -86,7 +86,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/mashiur/projects/parallel-computing/MPI-HomeWork/main_mpi.cpp">
+		<Unit filename="/home/mashiur/projects/parallel-computing/MPI-HomeWork/non-blocking/main_mpi.cpp">
 			<Option target="MPI_HomeWork"/>
 		</Unit>
 		<Unit filename="/home/mashiur/projects/parallel-computing/MPI-HomeWork/CMakeLists.txt">

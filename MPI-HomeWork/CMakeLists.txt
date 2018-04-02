@@ -5,5 +5,5 @@ include_directories(/usr/local/mpich/include)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main_mpi.cpp)
+set(SOURCE_FILES non-blocking/main_mpi.cpp)
 add_executable(MPI_HomeWork ${SOURCE_FILES})

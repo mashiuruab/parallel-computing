@@ -123,32 +123,32 @@ MPI_HomeWork/fast:
 	$(MAKE) -f CMakeFiles/MPI_HomeWork.dir/build.make CMakeFiles/MPI_HomeWork.dir/build
 .PHONY : MPI_HomeWork/fast
 
-main_mpi.o: main_mpi.cpp.o
+non-blocking/main_mpi.o: non-blocking/main_mpi.cpp.o
 
-.PHONY : main_mpi.o
+.PHONY : non-blocking/main_mpi.o
 
 # target to build an object file
-main_mpi.cpp.o:
-	$(MAKE) -f CMakeFiles/MPI_HomeWork.dir/build.make CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.o
-.PHONY : main_mpi.cpp.o
+non-blocking/main_mpi.cpp.o:
+	$(MAKE) -f CMakeFiles/MPI_HomeWork.dir/build.make CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.o
+.PHONY : non-blocking/main_mpi.cpp.o
 
-main_mpi.i: main_mpi.cpp.i
+non-blocking/main_mpi.i: non-blocking/main_mpi.cpp.i
 
-.PHONY : main_mpi.i
+.PHONY : non-blocking/main_mpi.i
 
 # target to preprocess a source file
-main_mpi.cpp.i:
-	$(MAKE) -f CMakeFiles/MPI_HomeWork.dir/build.make CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.i
-.PHONY : main_mpi.cpp.i
+non-blocking/main_mpi.cpp.i:
+	$(MAKE) -f CMakeFiles/MPI_HomeWork.dir/build.make CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.i
+.PHONY : non-blocking/main_mpi.cpp.i
 
-main_mpi.s: main_mpi.cpp.s
+non-blocking/main_mpi.s: non-blocking/main_mpi.cpp.s
 
-.PHONY : main_mpi.s
+.PHONY : non-blocking/main_mpi.s
 
 # target to generate assembly for a file
-main_mpi.cpp.s:
-	$(MAKE) -f CMakeFiles/MPI_HomeWork.dir/build.make CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.s
-.PHONY : main_mpi.cpp.s
+non-blocking/main_mpi.cpp.s:
+	$(MAKE) -f CMakeFiles/MPI_HomeWork.dir/build.make CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.s
+.PHONY : non-blocking/main_mpi.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... MPI_HomeWork"
-	@echo "... main_mpi.o"
-	@echo "... main_mpi.i"
-	@echo "... main_mpi.s"
+	@echo "... non-blocking/main_mpi.o"
+	@echo "... non-blocking/main_mpi.i"
+	@echo "... non-blocking/main_mpi.s"
 .PHONY : help
 
 

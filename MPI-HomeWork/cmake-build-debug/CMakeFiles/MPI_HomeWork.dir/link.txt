@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/MPI_HomeWork.dir/main_mpi.cpp.o  -o MPI_HomeWork 
+/usr/bin/c++  -g   CMakeFiles/MPI_HomeWork.dir/non-blocking/main_mpi.cpp.o  -o MPI_HomeWork 

@@ -268,55 +268,70 @@ void update_with_sibling_process() {
     int prev_process = my_rank - 1 < 0 ? number_of_process -1 : my_rank -1;
     int next_process = (my_rank + 1) % number_of_process;
 
+    MPI_Request request[4];
+    MPI_Status status[4];
+
     if((my_rank % 2) ==  0) { // even
-        MPI_Send(top_row_send, colNumber, MPI_INT, prev_process, SIBLING_CHANNEL, MPI_COMM_WORLD);
-        MPI_Send(bottom_row_send, colNumber, MPI_INT, next_process, SIBLING_CHANNEL, MPI_COMM_WORLD);
+        MPI_Isend(top_row_send, colNumber, MPI_INT, prev_process,
+                  SIBLING_CHANNEL, MPI_COMM_WORLD, &request[0]);
+        MPI_Isend(bottom_row_send, colNumber, MPI_INT, next_process,
+                 SIBLING_CHANNEL, MPI_COMM_WORLD, &request[1]);
 
 
-        MPI_Status status;
         int temp_array1[colNumber];
         int temp_array2[colNumber];
 
-        MPI_Recv(temp_array1, colNumber, MPI_INT, MPI_ANY_SOURCE, SIBLING_CHANNEL, MPI_COMM_WORLD, &status);
+        MPI_Irecv(temp_array1, colNumber, MPI_INT, MPI_ANY_SOURCE,
+                 SIBLING_CHANNEL, MPI_COMM_WORLD, &request[2]);
 
-        if(status.MPI_SOURCE == prev_process) {
+        MPI_Irecv(temp_array2, colNumber, MPI_INT, MPI_ANY_SOURCE,
+                  SIBLING_CHANNEL, MPI_COMM_WORLD, &request[3]);
+
+        MPI_Waitall(4, request, status);
+
+        if(status[2].MPI_SOURCE == prev_process) {
             array_copy(top_ghost_row_recv, temp_array1);
         } else {
             array_copy(bottom_ghost_row_recv, temp_array1);
         }
 
-        MPI_Recv(temp_array2, colNumber, MPI_INT, MPI_ANY_SOURCE, SIBLING_CHANNEL, MPI_COMM_WORLD, &status);
 
-        if(status.MPI_SOURCE == next_process) {
+        if(status[3].MPI_SOURCE == next_process) {
             array_copy(bottom_ghost_row_recv, temp_array2);
         } else {
             array_copy(top_ghost_row_recv, temp_array2);
         }
 
     } else {
-        MPI_Status status;
 
         int temp_array1[colNumber];
         int temp_array2[colNumber];
 
-        MPI_Recv(temp_array1, colNumber, MPI_INT, MPI_ANY_SOURCE, SIBLING_CHANNEL, MPI_COMM_WORLD, &status);
+        MPI_Irecv(temp_array1, colNumber, MPI_INT, MPI_ANY_SOURCE,
+                 SIBLING_CHANNEL, MPI_COMM_WORLD, &request[0]);
 
-        if(status.MPI_SOURCE == prev_process) {
+
+        MPI_Irecv(temp_array2, colNumber, MPI_INT, MPI_ANY_SOURCE,
+                 SIBLING_CHANNEL, MPI_COMM_WORLD, &request[1]);
+
+
+        MPI_Isend(top_row_send, colNumber, MPI_INT, prev_process,
+                  SIBLING_CHANNEL, MPI_COMM_WORLD, &request[2]);
+        MPI_Isend(bottom_row_send, colNumber, MPI_INT, next_process,
+                 SIBLING_CHANNEL, MPI_COMM_WORLD, &request[3]);
+
+        if(status[0].MPI_SOURCE == prev_process) {
             array_copy(top_ghost_row_recv, temp_array1);
         } else {
             array_copy(bottom_ghost_row_recv, temp_array1);
         }
 
-        MPI_Recv(temp_array2, colNumber, MPI_INT, MPI_ANY_SOURCE, SIBLING_CHANNEL, MPI_COMM_WORLD, &status);
 
-        if(status.MPI_SOURCE == next_process) {
+        if(status[1].MPI_SOURCE == next_process) {
             array_copy(bottom_ghost_row_recv, temp_array2);
         } else {
             array_copy(top_ghost_row_recv, temp_array2);
         }
-
-        MPI_Send(top_row_send, colNumber, MPI_INT, prev_process, SIBLING_CHANNEL, MPI_COMM_WORLD);
-        MPI_Send(bottom_row_send, colNumber, MPI_INT, next_process, SIBLING_CHANNEL, MPI_COMM_WORLD);
     }
 
     /*updating the mirrorboard top and  bottom ghost row with values sibling process*/
