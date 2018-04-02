@@ -320,6 +320,8 @@ void update_with_sibling_process() {
         MPI_Isend(bottom_row_send, colNumber, MPI_INT, next_process,
                  SIBLING_CHANNEL, MPI_COMM_WORLD, &request[3]);
 
+        MPI_Waitall(4, request, status);
+
         if(status[0].MPI_SOURCE == prev_process) {
             array_copy(top_ghost_row_recv, temp_array1);
         } else {
