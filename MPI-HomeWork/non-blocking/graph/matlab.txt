@@ -1,0 +1,37 @@
+os = load('openmpi_s.txt')
+mbs = load('mpi_b_s.txt')
+mnbs  = load('mpi_nb_s.txt')
+
+plot(os(:,1), os(:,2),'DisplayName','openmpi')
+hold on
+
+plot(mbs(:,1), mbs(:,2), 'DisplayName','mpi-blocking')
+plot(mnbs(:,1), mnbs(:,2), 'DisplayName','mpi-non-blocking')
+
+
+xlabel('Number of Threads/Process')
+ylabel('Speed Up')
+
+legend('show')
+
+hold off
+
+
+
+oe = load('openmpi_e.txt')
+mbe = load('mpi_b_e.txt')
+mnbe  = load('mpi_nb_e.txt')
+
+plot(oe(:,1), oe(:,2),'DisplayName','openmpi')
+hold on
+
+plot(mbe(:,1), mbe(:,2), 'DisplayName','mpi-blocking')
+plot(mnbe(:,1), mnbe(:,2), 'DisplayName','mpi-non-blocking')
+
+
+xlabel('Number of Threads/Process')
+ylabel('Efficiency')
+
+legend('show')
+
+hold off
