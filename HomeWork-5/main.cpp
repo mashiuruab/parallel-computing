@@ -175,8 +175,6 @@ int recv_matrix[20] = {-1};
 
 void init_tree_matrix(int low_rank, int upper_rank) { // 0 & number_of_process - 1
     if ((low_rank >= upper_rank  - 1) && recv_matrix[upper_rank] != -1) {
-        /*cout<< "Returned for " << low_rank << " " << upper_rank << endl;
-        cout<< recv_matrix[upper_rank] << endl;*/
         return;
     }
 
@@ -209,22 +207,6 @@ void init_dummy_matrix() {
 void tree(int low_rank, int upper_rank) {
     init_dummy_matrix();
     init_tree_matrix(low_rank, upper_rank);
-
-    /*cout<< "Send Matrix " << endl;
-    for(int c1=0;c1<number_of_process;c1++){
-        cout<< c1 << " -> " ;
-        for(int c2=0;send_matrix[c1][c2]!=-1;c2++) {
-            cout<< send_matrix[c1][c2] << ",";
-        }
-        cout<< endl;
-    }
-
-    cout<< "Recv Matrix" << endl;
-    for(int c=0;c<number_of_process;c++){
-        cout<< c << " -> " <<recv_matrix[c]<<endl;
-    }
-
-    cout<< "Received  Result >>>>>>>>>>>>>>>" << endl;*/
 
     if(my_rank ==  MASTER_RANK) {
         int send_buf = 10;
