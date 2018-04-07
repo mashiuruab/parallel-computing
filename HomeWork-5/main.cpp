@@ -1,5 +1,6 @@
 #include <iostream>
 #include <mpi.h>
+#include <chrono>
 
 using namespace std;
 
@@ -247,24 +248,52 @@ int main(int argc, char** argv) {
     }
 
     int c = atoi(argv[1]);
+    auto start = chrono::system_clock::now();
+    auto end = chrono::system_clock::now();
 
     switch (c) {
         case 1:
             if (my_rank == MASTER_RANK) cout<< "Linear BroadCast>>>>>" << endl;
+            start = chrono::system_clock::now();
             linear();
+            end =  chrono::system_clock::now();
             break;
         case 2:
             if (my_rank == MASTER_RANK) cout<< "Ring BroadCast>>>>>" << endl;
+            start = chrono::system_clock::now();
             ring();
+            end =  chrono::system_clock::now();
             break;
         case 3:
             if (my_rank == MASTER_RANK) cout<< "Double Ring BroadCast>>>>>" << endl;
+            start = chrono::system_clock::now();
             double_ring();
+            end =  chrono::system_clock::now();
             break;
         case 4:
             if (my_rank == MASTER_RANK) cout<< "Tree BroadCast>>>>>" << endl;
+            start = chrono::system_clock::now();
             tree(0, number_of_process - 1);
+            end =  chrono::system_clock::now();
             break;
+    }
+
+    auto elapsed = chrono::duration_cast<chrono::milliseconds>(end - start);
+    long local_duration = elapsed.count();
+    long global_duration;
+
+    /*cout<< "LOCAL:: elapsed time,  "<<"Rank : " << my_rank << ": " << local_duration << " milliseconds " << endl;*/
+
+    if(my_rank ==  MASTER_RANK) {// only master should receive data here
+        MPI_Reduce(&local_duration, &global_duration, 1, MPI_LONG,
+                   MPI_MAX, MASTER_RANK, MPI_COMM_WORLD);
+
+        long max_duration = local_duration >= global_duration ? local_duration : global_duration;
+
+        cout<<"GLOBAL:: elapsed time " << max_duration << " milliseconds" << endl;
+    } else {
+        MPI_Reduce(&local_duration, &global_duration, 1, MPI_LONG,
+                   MPI_MAX, MASTER_RANK, MPI_COMM_WORLD);
     }
 
     // Finalize the MPI environment.

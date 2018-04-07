@@ -25,13 +25,13 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1068">
-              <caret line="177" column="0" lean-forward="false" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
+            <state relative-caret-position="264">
+              <caret line="284" column="0" lean-forward="false" selection-start-line="284" selection-start-column="0" selection-end-line="284" selection-end-column="0" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-                <element signature="e#649#1677#0" expanded="false" />
-                <element signature="e#1679#5555#0" expanded="false" />
-                <element signature="e#6126#6381#0" expanded="false" />
+                <element signature="e#667#1695#0" expanded="false" />
+                <element signature="e#1697#5573#0" expanded="false" />
+                <element signature="e#6144#6399#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -50,8 +50,8 @@
       <file leaf-file-name="main_mpi.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_mpi.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1202">
-              <caret line="391" column="12" lean-forward="false" selection-start-line="391" selection-start-column="12" selection-end-line="391" selection-end-column="12" />
+            <state relative-caret-position="262">
+              <caret line="401" column="45" lean-forward="false" selection-start-line="401" selection-start-column="45" selection-end-line="401" selection-end-column="45" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -173,12 +173,12 @@
       <updated>1523015011562</updated>
       <workItem from="1523015013439" duration="9888000" />
       <workItem from="1523062231399" duration="9378000" />
-      <workItem from="1523101304910" duration="2104000" />
+      <workItem from="1523101304910" duration="3650000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21370000" />
+    <option name="totallyTimeSpent" value="22916000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
@@ -221,9 +221,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#649#1677#0" expanded="false" />
-            <element signature="e#1679#5555#0" expanded="false" />
-            <element signature="e#6126#6381#0" expanded="false" />
+            <element signature="e#667#1695#0" expanded="false" />
+            <element signature="e#1697#5573#0" expanded="false" />
+            <element signature="e#6144#6399#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -260,9 +260,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#649#1677#0" expanded="false" />
-            <element signature="e#1679#5555#0" expanded="false" />
-            <element signature="e#6126#6381#0" expanded="false" />
+            <element signature="e#667#1695#0" expanded="false" />
+            <element signature="e#1697#5573#0" expanded="false" />
+            <element signature="e#6144#6399#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -309,16 +309,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_mpi.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1202">
-          <caret line="391" column="12" lean-forward="false" selection-start-line="391" selection-start-column="12" selection-end-line="391" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -327,15 +317,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
+    <entry file="file:///usr/include/c++/5/chrono">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1068">
-          <caret line="177" column="0" lean-forward="false" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
+        <state relative-caret-position="205">
+          <caret line="277" column="4" lean-forward="false" selection-start-line="277" selection-start-column="4" selection-end-line="277" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_mpi.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="401" column="45" lean-forward="false" selection-start-line="401" selection-start-column="45" selection-end-line="401" selection-end-column="45" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#649#1677#0" expanded="false" />
-            <element signature="e#1679#5555#0" expanded="false" />
-            <element signature="e#6126#6381#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="284" column="0" lean-forward="false" selection-start-line="284" selection-start-column="0" selection-end-line="284" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#667#1695#0" expanded="false" />
+            <element signature="e#1697#5573#0" expanded="false" />
+            <element signature="e#6144#6399#0" expanded="false" />
           </folding>
         </state>
       </provider>
