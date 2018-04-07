@@ -166,6 +166,62 @@ void double_ring() {
     }
 }
 
+
+int send_matrix[20][20] = {-1};
+int recv_matrix[20] = {-1};
+
+void init_tree_matrix(int low_rank, int upper_rank) { // 0 & number_of_process - 1
+    if ((low_rank >= upper_rank  - 1) && recv_matrix[upper_rank] != -1) {
+        cout<< "Returned for " << low_rank << " " << upper_rank << endl;
+        cout<< recv_matrix[upper_rank] << endl;
+        return;
+    }
+
+    int to_send = ((upper_rank + low_rank) / 2) + ((upper_rank + low_rank) % 2);
+
+    int c = 0;
+    while (send_matrix[low_rank][c] != -1) {
+        c++;
+    }
+
+    send_matrix[low_rank][c] = to_send;
+    recv_matrix[to_send] = low_rank;
+
+    init_tree_matrix(low_rank, to_send);
+    init_tree_matrix(to_send, upper_rank);
+}
+
+void init_dummy_matrix() {
+    for(int c1=0;c1<number_of_process;c1++){
+        for(int c2=0;c2<number_of_process;c2++) {
+            send_matrix[c1][c2] = -1;
+        }
+    }
+
+    for(int c=0;c<number_of_process;c++){
+        recv_matrix[c] = -1;
+    }
+}
+
+void tree(int low_rank, int upper_rank) {
+    init_dummy_matrix();
+    init_tree_matrix(low_rank, upper_rank);
+
+    cout<< "Send Matrix " << endl;
+    for(int c1=0;c1<number_of_process;c1++){
+        cout<< c1 << " -> " ;
+        for(int c2=0;send_matrix[c1][c2]!=-1;c2++) {
+            cout<< send_matrix[c1][c2] << ",";
+        }
+        cout<< endl;
+    }
+
+    cout<< "Recv Matrix" << endl;
+    for(int c=0;c<number_of_process;c++){
+        cout<< c << " -> " <<recv_matrix[c]<<endl;
+    }
+}
+
 int main(int argc, char** argv) {
 
     MPI_Init(NULL, NULL);
@@ -183,7 +239,11 @@ int main(int argc, char** argv) {
 
     //ring();
 
-    double_ring();
+    //double_ring();
+
+    if(my_rank == MASTER_RANK) {
+        tree(0, number_of_process - 1);
+    }
 
     // Finalize the MPI environment.
     MPI_Finalize();
