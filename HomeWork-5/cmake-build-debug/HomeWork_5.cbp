@@ -86,7 +86,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/mashiur/projects/parallel-computing/HomeWork-5/main.cpp">
+		<Unit filename="/home/mashiur/projects/parallel-computing/HomeWork-5/main2.cpp">
 			<Option target="HomeWork_5"/>
 		</Unit>
 		<Unit filename="/home/mashiur/projects/parallel-computing/HomeWork-5/CMakeLists.txt">

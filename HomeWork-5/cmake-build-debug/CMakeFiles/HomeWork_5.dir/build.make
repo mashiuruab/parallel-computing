@@ -57,38 +57,38 @@ include CMakeFiles/HomeWork_5.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/HomeWork_5.dir/flags.make
 
-CMakeFiles/HomeWork_5.dir/main.cpp.o: CMakeFiles/HomeWork_5.dir/flags.make
-CMakeFiles/HomeWork_5.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashiur/projects/parallel-computing/HomeWork-5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/HomeWork_5.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HomeWork_5.dir/main.cpp.o -c /home/mashiur/projects/parallel-computing/HomeWork-5/main.cpp
+CMakeFiles/HomeWork_5.dir/main2.cpp.o: CMakeFiles/HomeWork_5.dir/flags.make
+CMakeFiles/HomeWork_5.dir/main2.cpp.o: ../main2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mashiur/projects/parallel-computing/HomeWork-5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/HomeWork_5.dir/main2.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HomeWork_5.dir/main2.cpp.o -c /home/mashiur/projects/parallel-computing/HomeWork-5/main2.cpp
 
-CMakeFiles/HomeWork_5.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HomeWork_5.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashiur/projects/parallel-computing/HomeWork-5/main.cpp > CMakeFiles/HomeWork_5.dir/main.cpp.i
+CMakeFiles/HomeWork_5.dir/main2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HomeWork_5.dir/main2.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mashiur/projects/parallel-computing/HomeWork-5/main2.cpp > CMakeFiles/HomeWork_5.dir/main2.cpp.i
 
-CMakeFiles/HomeWork_5.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HomeWork_5.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashiur/projects/parallel-computing/HomeWork-5/main.cpp -o CMakeFiles/HomeWork_5.dir/main.cpp.s
+CMakeFiles/HomeWork_5.dir/main2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HomeWork_5.dir/main2.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mashiur/projects/parallel-computing/HomeWork-5/main2.cpp -o CMakeFiles/HomeWork_5.dir/main2.cpp.s
 
-CMakeFiles/HomeWork_5.dir/main.cpp.o.requires:
+CMakeFiles/HomeWork_5.dir/main2.cpp.o.requires:
 
-.PHONY : CMakeFiles/HomeWork_5.dir/main.cpp.o.requires
+.PHONY : CMakeFiles/HomeWork_5.dir/main2.cpp.o.requires
 
-CMakeFiles/HomeWork_5.dir/main.cpp.o.provides: CMakeFiles/HomeWork_5.dir/main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/HomeWork_5.dir/build.make CMakeFiles/HomeWork_5.dir/main.cpp.o.provides.build
-.PHONY : CMakeFiles/HomeWork_5.dir/main.cpp.o.provides
+CMakeFiles/HomeWork_5.dir/main2.cpp.o.provides: CMakeFiles/HomeWork_5.dir/main2.cpp.o.requires
+	$(MAKE) -f CMakeFiles/HomeWork_5.dir/build.make CMakeFiles/HomeWork_5.dir/main2.cpp.o.provides.build
+.PHONY : CMakeFiles/HomeWork_5.dir/main2.cpp.o.provides
 
-CMakeFiles/HomeWork_5.dir/main.cpp.o.provides.build: CMakeFiles/HomeWork_5.dir/main.cpp.o
+CMakeFiles/HomeWork_5.dir/main2.cpp.o.provides.build: CMakeFiles/HomeWork_5.dir/main2.cpp.o
 
 
 # Object files for target HomeWork_5
 HomeWork_5_OBJECTS = \
-"CMakeFiles/HomeWork_5.dir/main.cpp.o"
+"CMakeFiles/HomeWork_5.dir/main2.cpp.o"
 
 # External object files for target HomeWork_5
 HomeWork_5_EXTERNAL_OBJECTS =
 
-HomeWork_5: CMakeFiles/HomeWork_5.dir/main.cpp.o
+HomeWork_5: CMakeFiles/HomeWork_5.dir/main2.cpp.o
 HomeWork_5: CMakeFiles/HomeWork_5.dir/build.make
 HomeWork_5: CMakeFiles/HomeWork_5.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mashiur/projects/parallel-computing/HomeWork-5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable HomeWork_5"
@@ -99,7 +99,7 @@ CMakeFiles/HomeWork_5.dir/build: HomeWork_5
 
 .PHONY : CMakeFiles/HomeWork_5.dir/build
 
-CMakeFiles/HomeWork_5.dir/requires: CMakeFiles/HomeWork_5.dir/main.cpp.o.requires
+CMakeFiles/HomeWork_5.dir/requires: CMakeFiles/HomeWork_5.dir/main2.cpp.o.requires
 
 .PHONY : CMakeFiles/HomeWork_5.dir/requires
 
