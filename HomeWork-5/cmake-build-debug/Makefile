@@ -123,32 +123,32 @@ HomeWork_5/fast:
 	$(MAKE) -f CMakeFiles/HomeWork_5.dir/build.make CMakeFiles/HomeWork_5.dir/build
 .PHONY : HomeWork_5/fast
 
-main2.o: main2.cpp.o
+main_blocking.o: main_blocking.cpp.o
 
-.PHONY : main2.o
+.PHONY : main_blocking.o
 
 # target to build an object file
-main2.cpp.o:
-	$(MAKE) -f CMakeFiles/HomeWork_5.dir/build.make CMakeFiles/HomeWork_5.dir/main2.cpp.o
-.PHONY : main2.cpp.o
+main_blocking.cpp.o:
+	$(MAKE) -f CMakeFiles/HomeWork_5.dir/build.make CMakeFiles/HomeWork_5.dir/main_blocking.cpp.o
+.PHONY : main_blocking.cpp.o
 
-main2.i: main2.cpp.i
+main_blocking.i: main_blocking.cpp.i
 
-.PHONY : main2.i
+.PHONY : main_blocking.i
 
 # target to preprocess a source file
-main2.cpp.i:
-	$(MAKE) -f CMakeFiles/HomeWork_5.dir/build.make CMakeFiles/HomeWork_5.dir/main2.cpp.i
-.PHONY : main2.cpp.i
+main_blocking.cpp.i:
+	$(MAKE) -f CMakeFiles/HomeWork_5.dir/build.make CMakeFiles/HomeWork_5.dir/main_blocking.cpp.i
+.PHONY : main_blocking.cpp.i
 
-main2.s: main2.cpp.s
+main_blocking.s: main_blocking.cpp.s
 
-.PHONY : main2.s
+.PHONY : main_blocking.s
 
 # target to generate assembly for a file
-main2.cpp.s:
-	$(MAKE) -f CMakeFiles/HomeWork_5.dir/build.make CMakeFiles/HomeWork_5.dir/main2.cpp.s
-.PHONY : main2.cpp.s
+main_blocking.cpp.s:
+	$(MAKE) -f CMakeFiles/HomeWork_5.dir/build.make CMakeFiles/HomeWork_5.dir/main_blocking.cpp.s
+.PHONY : main_blocking.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... HomeWork_5"
-	@echo "... main2.o"
-	@echo "... main2.i"
-	@echo "... main2.s"
+	@echo "... main_blocking.o"
+	@echo "... main_blocking.i"
+	@echo "... main_blocking.s"
 .PHONY : help
 
 
