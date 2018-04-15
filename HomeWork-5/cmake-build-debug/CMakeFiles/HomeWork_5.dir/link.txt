@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/HomeWork_5.dir/main_blocking.cpp.o  -o HomeWork_5 
+/usr/bin/c++  -g   CMakeFiles/HomeWork_5.dir/non_blocking/main_ns.cpp.o  -o HomeWork_5 

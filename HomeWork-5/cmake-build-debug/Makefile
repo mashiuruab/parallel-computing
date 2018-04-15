@@ -123,32 +123,32 @@ HomeWork_5/fast:
 	$(MAKE) -f CMakeFiles/HomeWork_5.dir/build.make CMakeFiles/HomeWork_5.dir/build
 .PHONY : HomeWork_5/fast
 
-main_blocking.o: main_blocking.cpp.o
+non_blocking/main_ns.o: non_blocking/main_ns.cpp.o
 
-.PHONY : main_blocking.o
+.PHONY : non_blocking/main_ns.o
 
 # target to build an object file
-main_blocking.cpp.o:
-	$(MAKE) -f CMakeFiles/HomeWork_5.dir/build.make CMakeFiles/HomeWork_5.dir/main_blocking.cpp.o
-.PHONY : main_blocking.cpp.o
+non_blocking/main_ns.cpp.o:
+	$(MAKE) -f CMakeFiles/HomeWork_5.dir/build.make CMakeFiles/HomeWork_5.dir/non_blocking/main_ns.cpp.o
+.PHONY : non_blocking/main_ns.cpp.o
 
-main_blocking.i: main_blocking.cpp.i
+non_blocking/main_ns.i: non_blocking/main_ns.cpp.i
 
-.PHONY : main_blocking.i
+.PHONY : non_blocking/main_ns.i
 
 # target to preprocess a source file
-main_blocking.cpp.i:
-	$(MAKE) -f CMakeFiles/HomeWork_5.dir/build.make CMakeFiles/HomeWork_5.dir/main_blocking.cpp.i
-.PHONY : main_blocking.cpp.i
+non_blocking/main_ns.cpp.i:
+	$(MAKE) -f CMakeFiles/HomeWork_5.dir/build.make CMakeFiles/HomeWork_5.dir/non_blocking/main_ns.cpp.i
+.PHONY : non_blocking/main_ns.cpp.i
 
-main_blocking.s: main_blocking.cpp.s
+non_blocking/main_ns.s: non_blocking/main_ns.cpp.s
 
-.PHONY : main_blocking.s
+.PHONY : non_blocking/main_ns.s
 
 # target to generate assembly for a file
-main_blocking.cpp.s:
-	$(MAKE) -f CMakeFiles/HomeWork_5.dir/build.make CMakeFiles/HomeWork_5.dir/main_blocking.cpp.s
-.PHONY : main_blocking.cpp.s
+non_blocking/main_ns.cpp.s:
+	$(MAKE) -f CMakeFiles/HomeWork_5.dir/build.make CMakeFiles/HomeWork_5.dir/non_blocking/main_ns.cpp.s
+.PHONY : non_blocking/main_ns.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... HomeWork_5"
-	@echo "... main_blocking.o"
-	@echo "... main_blocking.i"
-	@echo "... main_blocking.s"
+	@echo "... non_blocking/main_ns.o"
+	@echo "... non_blocking/main_ns.i"
+	@echo "... non_blocking/main_ns.s"
 .PHONY : help
 
 

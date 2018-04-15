@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/mashiur/projects/parallel-computing/HomeWork-5/main_blocking.cpp" "/home/mashiur/projects/parallel-computing/HomeWork-5/cmake-build-debug/CMakeFiles/HomeWork_5.dir/main_blocking.cpp.o"
+  "/home/mashiur/projects/parallel-computing/HomeWork-5/non_blocking/main_ns.cpp" "/home/mashiur/projects/parallel-computing/HomeWork-5/cmake-build-debug/CMakeFiles/HomeWork_5.dir/non_blocking/main_ns.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

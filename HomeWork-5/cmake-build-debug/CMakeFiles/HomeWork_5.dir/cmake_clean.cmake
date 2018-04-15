@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/HomeWork_5.dir/main_blocking.cpp.o"
+  "CMakeFiles/HomeWork_5.dir/non_blocking/main_ns.cpp.o"
   "HomeWork_5.pdb"
   "HomeWork_5"
 )

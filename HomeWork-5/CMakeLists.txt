@@ -5,5 +5,5 @@ include_directories(/usr/local/mpich/include)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main_blocking.cpp)
+set(SOURCE_FILES non_blocking/main_ns.cpp)
 add_executable(HomeWork_5 ${SOURCE_FILES})
