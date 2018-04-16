@@ -1,0 +1,22 @@
+setting dmc scratch directory
+ 
+============================================================
+=====         Summary of your script job               =====
+============================================================
+  The script file is: tree_8.sh
+  The time limit is 14:00:00 HH:MM:SS.
+  The target directory is: /home/uabcls05/cs732/HomeWork-5/non_blocking
+  The working directory is:  /scratch-local/uabcls05.m_tree_8.161653
+  The memory limit is: 8gb
+  The job will start running after: 2018-04-15T16:24:46
+  Job Name: m_tree_8
+  Virtual queue: class
+  QOS: --qos=class
+  Constraints: --constraint=dmc
+  Using  8  cores on master node  dmc29
+  Node list:  dmc29
+  Nodes:  dmc29 dmc29 dmc29 dmc29 dmc29 dmc29 dmc29 dmc29
+  Command typed:
+/apps/scripts/run_script tree_8.sh     
+  Queue submit command:
+sbatch --qos=class -J m_tree_8 --begin=2018-04-15T16:24:46 --requeue --mail-user=mashiur@uab.edu -o m_tree_8.o161653 -t 14:00:00 -N 1-1 -n 8 --mem-per-cpu=1000mb --constraint=dmc  

@@ -1,0 +1,32 @@
+Double Ring BroadCast>>>>> for 32 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 25892024 nanoseconds
+Double Ring BroadCast>>>>> for 64 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 609984 nanoseconds
+Double Ring BroadCast>>>>> for 128 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 25981489 nanoseconds
+Double Ring BroadCast>>>>> for 256 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 1483241 nanoseconds
+Double Ring BroadCast>>>>> for 512 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 13717282 nanoseconds
+Double Ring BroadCast>>>>> for 1024 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 2817342 nanoseconds
+Double Ring BroadCast>>>>> for 2048 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 3425145 nanoseconds
+Double Ring BroadCast>>>>> for 4096 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 36949986 nanoseconds
+Double Ring BroadCast>>>>> for 8192 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 28895923 nanoseconds
+Double Ring BroadCast>>>>> for 16384 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 14198760 nanoseconds
+Double Ring BroadCast>>>>> for 32768 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 14073892 nanoseconds
+Double Ring BroadCast>>>>> for 65536 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 12165999 nanoseconds
+Double Ring BroadCast>>>>> for 131072 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 9918903 nanoseconds
+Double Ring BroadCast>>>>> for 262144 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 34297777 nanoseconds
+Double Ring BroadCast>>>>> for 524288 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 3309207 nanoseconds
+Double Ring BroadCast>>>>> for 1048576 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 15641428 nanoseconds

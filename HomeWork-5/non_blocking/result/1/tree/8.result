@@ -1,0 +1,32 @@
+Tree BroadCast>>>>> for  32 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 14650535 nanoseconds
+Tree BroadCast>>>>> for  64 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 13830371 nanoseconds
+Tree BroadCast>>>>> for  128 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 13570628 nanoseconds
+Tree BroadCast>>>>> for  256 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 260817 nanoseconds
+Tree BroadCast>>>>> for  512 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 647828 nanoseconds
+Tree BroadCast>>>>> for  1024 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 759645 nanoseconds
+Tree BroadCast>>>>> for  2048 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 440885 nanoseconds
+Tree BroadCast>>>>> for  4096 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 923087 nanoseconds
+Tree BroadCast>>>>> for  8192 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 1668603 nanoseconds
+Tree BroadCast>>>>> for  16384 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 37719860 nanoseconds
+Tree BroadCast>>>>> for  32768 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 694773 nanoseconds
+Tree BroadCast>>>>> for  65536 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 10697941 nanoseconds
+Tree BroadCast>>>>> for  131072 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 23336747 nanoseconds
+Tree BroadCast>>>>> for  262144 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 2482144 nanoseconds
+Tree BroadCast>>>>> for  524288 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 17968032 nanoseconds
+Tree BroadCast>>>>> for  1048576 bytes and  number_of_process = 8
+GLOBAL:: elapsed time 21073996 nanoseconds

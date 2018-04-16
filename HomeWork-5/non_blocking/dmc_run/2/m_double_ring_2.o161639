@@ -1,0 +1,22 @@
+setting dmc scratch directory
+ 
+============================================================
+=====         Summary of your script job               =====
+============================================================
+  The script file is: double_ring_2.sh
+  The time limit is 14:00:00 HH:MM:SS.
+  The target directory is: /home/uabcls05/cs732/HomeWork-5/non_blocking
+  The working directory is:  /scratch-local/uabcls05.m_double_ring_2.161639
+  The memory limit is: 2gb
+  The job will start running after: 2018-04-15T16:22:19
+  Job Name: m_double_ring_2
+  Virtual queue: class
+  QOS: --qos=class
+  Constraints: --constraint=dmc
+  Using  2  cores on master node  dmc10
+  Node list:  dmc10
+  Nodes:  dmc10 dmc10
+  Command typed:
+/apps/scripts/run_script double_ring_2.sh     
+  Queue submit command:
+sbatch --qos=class -J m_double_ring_2 --begin=2018-04-15T16:22:19 --requeue --mail-user=mashiur@uab.edu -o m_double_ring_2.o161639 -t 14:00:00 -N 1-1 -n 2 --mem-per-cpu=1000mb --constraint=dmc  

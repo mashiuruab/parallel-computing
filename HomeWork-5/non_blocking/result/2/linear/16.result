@@ -1,0 +1,32 @@
+Linear BroadCast>>>>> for 32 bytes and number_of_process = 16
+GLOBAL:: elapsed time 15240603 nanoseconds
+Linear BroadCast>>>>> for 64 bytes and number_of_process = 16
+GLOBAL:: elapsed time 460445 nanoseconds
+Linear BroadCast>>>>> for 128 bytes and number_of_process = 16
+GLOBAL:: elapsed time 430701 nanoseconds
+Linear BroadCast>>>>> for 256 bytes and number_of_process = 16
+GLOBAL:: elapsed time 14145154 nanoseconds
+Linear BroadCast>>>>> for 512 bytes and number_of_process = 16
+GLOBAL:: elapsed time 712958 nanoseconds
+Linear BroadCast>>>>> for 1024 bytes and number_of_process = 16
+GLOBAL:: elapsed time 583915 nanoseconds
+Linear BroadCast>>>>> for 2048 bytes and number_of_process = 16
+GLOBAL:: elapsed time 14339518 nanoseconds
+Linear BroadCast>>>>> for 4096 bytes and number_of_process = 16
+GLOBAL:: elapsed time 493123 nanoseconds
+Linear BroadCast>>>>> for 8192 bytes and number_of_process = 16
+GLOBAL:: elapsed time 436304 nanoseconds
+Linear BroadCast>>>>> for 16384 bytes and number_of_process = 16
+GLOBAL:: elapsed time 469760 nanoseconds
+Linear BroadCast>>>>> for 32768 bytes and number_of_process = 16
+GLOBAL:: elapsed time 502362 nanoseconds
+Linear BroadCast>>>>> for 65536 bytes and number_of_process = 16
+GLOBAL:: elapsed time 622673 nanoseconds
+Linear BroadCast>>>>> for 131072 bytes and number_of_process = 16
+GLOBAL:: elapsed time 707556 nanoseconds
+Linear BroadCast>>>>> for 262144 bytes and number_of_process = 16
+GLOBAL:: elapsed time 830606 nanoseconds
+Linear BroadCast>>>>> for 524288 bytes and number_of_process = 16
+GLOBAL:: elapsed time 1807673 nanoseconds
+Linear BroadCast>>>>> for 1048576 bytes and number_of_process = 16
+GLOBAL:: elapsed time 4703558 nanoseconds
